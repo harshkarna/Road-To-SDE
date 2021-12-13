@@ -66,7 +66,7 @@ public class Merge_2_Sorted_Arrays {
             }
         }
 
-        // as there may be scerio one array is complete in scanning so we need
+        // as there may be one case when one array is complete in scanning so we need
         //to put next all array elements in k
         while(i< arr1.length){
             arr3[k]=arr1[i];
