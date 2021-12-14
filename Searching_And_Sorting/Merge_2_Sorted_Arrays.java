@@ -55,7 +55,7 @@ public class Merge_2_Sorted_Arrays {
 
         while(j< arr2.length && i < arr1.length){
             if (arr2[j]<arr1[i]){
-                arr3[k]=arr2[j];
+                arr3[k]=arr2[j]; /// we can also do [k++] and [j++]
                 k++;
                 j++;
             }
