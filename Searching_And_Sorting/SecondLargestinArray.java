@@ -48,16 +48,29 @@ package com.Searching_And_Sorting;
 
 public class SecondLargestinArray {
 
-    public static void secondlargestinarray(int arr[]){
+    public static int secondlargestinarray(int arr[]){
+        int temp;
 
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j< arr.length-1;j++){
+                if(arr[j+1]<arr[j]) {
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        return arr[arr.length-2];
 
     }
 
 
     public static void main(String[] args) {
 
-        int arr[]={1,2,3,4};
-        secondlargestinarray(arr);
+        int arr[]={90,9,90,5};
+        int arr1=secondlargestinarray(arr);
+        System.out.println(arr1);
+
 
     }
 
