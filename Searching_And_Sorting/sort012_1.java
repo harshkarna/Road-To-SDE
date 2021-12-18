@@ -10,14 +10,14 @@ public class sort012_1 {
         int temp_nz=0;
         int temp_nt=0;
         for(int i=0;i<=nt;i++){
-            if(i==nt){ //when i is about to pass nt pointer
-                break;
-            }
-            else if(arr[i]==0){
+            if(arr[i]==0){
                 temp_nz=arr[i];
                 arr[i]=arr[nz];
                 arr[nz]=temp_nz;
                 nz++;
+                if(i==nt){
+                    break;
+                }
             }
             else if(arr[i]==2){
                 if(arr[i]==arr[nt]){
@@ -55,7 +55,7 @@ public class sort012_1 {
 //            arr[i] = sc.nextInt();
 //        }
 
-        int arr[]={0,1,2,0,1,2,0,1,2,0,2,1,0,2,2,1,1,0};
+        int arr[]={2,0,1,2,2,2,1,0,2,0,0,1,1,2,0,2,1};
         sort012(arr);
 
     }
