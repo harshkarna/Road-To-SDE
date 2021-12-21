@@ -2,29 +2,22 @@ package com.Searching_And_Sorting;
 
 public class RotateArray1 {
 
-
+    //// Better solution
     public static int[] rotatearray(int arr[],int toRotate){
-        int k=0;
-        int arr1[]=new int[arr.length];
 
-
-        int i=toRotate;
-        while(i< arr.length){
-            arr1[k]=arr[i];
-            i++;
-            k++;
+        int n = arr.length;
+        for(int i=0;i<toRotate;i++){
+            int temp=arr[0];
+            for(int j=0;j< n-1;j++){
+                arr[j]=arr[j+1];
+            }
+            arr[n-1]=temp;
         }
-        i=0;
-        while(k< arr1.length && i<toRotate){
-            arr1[k]=arr[i];
-            k++;
-            i++;
-        }
+        return arr;
 
-        return arr1;
     }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
         int arr[]={1,2,3,4,5,6,7};
         int toRotate=2;

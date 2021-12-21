@@ -1,3 +1,6 @@
+//Input : int arr[]={3,3} , sum =6
+//Output : [0,1]
+
 package com.Array;
 
 public class TwoSum {

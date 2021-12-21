@@ -6,17 +6,6 @@ public class Reverse_an_array {
         int s=0;
         int e= arr.length-1;
         int temp=0;
-
-//        for(int s=0;s<e;s++){
-//            temp=arr[s];
-//            arr[s]=arr[e];
-//            arr[e]=temp;
-//            e--;
-//            if(s==e){
-//                break;
-//            }
-//        }
-
         while(s<e){
             temp=arr[s];
             arr[s]=arr[e];
