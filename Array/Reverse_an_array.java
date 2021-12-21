@@ -1,6 +1,6 @@
 package com.Array;
 
-public class Reverse_an_array {
+public class Reverse_An_Array {
 
     public static int[] reverse(int arr[]){
         int s=0;
