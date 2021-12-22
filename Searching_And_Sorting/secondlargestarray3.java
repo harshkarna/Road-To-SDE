@@ -11,7 +11,7 @@ public class secondlargestarray3 {
                 sl=l;
                 l=arr[i];
             }
-            else if(arr[i]<l && arr[i]>sl){
+            else if(arr[i]<l && arr[i]>sl){ //for case if a[i] is less than l but greater than sl
                     sl=arr[i];
             }
 //            else if(arr[i]==l || (arr[i]<l && arr[i]<sl) ){

@@ -13,7 +13,7 @@ public class selectionsort3 {
             int minIndex=-1;
             for (int j=i;j<arr.length;j++){
                 if(arr[j]< min){
-                    min=arr[j];
+                    min=arr[j];///doubt
                     minIndex=j;
                 }
             }
