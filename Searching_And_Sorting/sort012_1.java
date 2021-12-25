@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class sort012_1 {
 
     public static void sort012(int arr[]){
+
+         int n = arr.length;
         int nz=0;
-        int nt=arr.length-1;
+        int nt=n-1;
         int temp_nz=0;
         int temp_nt=0;
-        for(int i=0;i<=nt;i++){
+
+        for (int i =0;i<=nt;i++){
             if(arr[i]==0){
-                temp_nz=arr[i];
+                temp_nz= arr[i];
                 arr[i]=arr[nz];
                 arr[nz]=temp_nz;
                 nz++;
@@ -19,13 +22,14 @@ public class sort012_1 {
                     break;
                 }
             }
-            else if(arr[i]==2){
-                if(arr[i]==arr[nt]){
+            else if (arr[i]==2){
+                if (arr[i]==arr[nt]){
                     temp_nt=arr[i];
                     arr[i]=arr[nt-1];
                     arr[nt-1]=temp_nt;
                     nt=nt-2;
                     i--;
+
                 }
                 else{
                     temp_nt=arr[i];
@@ -35,7 +39,7 @@ public class sort012_1 {
                     i--;
                 }
             }
-        }
+       }
         //display of array
         for(int i=0;i < arr.length; i++){
             System.out.print(arr[i]+" ");
@@ -55,7 +59,7 @@ public class sort012_1 {
 //            arr[i] = sc.nextInt();
 //        }
 
-        int arr[]={2,0,1,2,2,2,1,0,2,0,0,1,1,2,0,2,1};
+        int arr[]={0,1,2,1,2,1,2};
         sort012(arr);
 
     }

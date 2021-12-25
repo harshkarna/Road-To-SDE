@@ -15,7 +15,7 @@ public class SwapAlternate2 {
 
 
     public static void main(String[] args) {
-        int arr[] ={9,3,12,6,4,32};
+        int arr[] ={9,3,12,6,4,32,};
         int arr1[]=swapalternate(arr);
 
         //display of array

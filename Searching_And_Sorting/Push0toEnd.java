@@ -57,6 +57,7 @@ public class Push0toEnd {
                 arr2[k]=arr[i];
                 k++;
             }
+
             i++;
         }
 
