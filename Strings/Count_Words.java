@@ -32,7 +32,6 @@ public class Count_Words {
         int count=0;
         Scanner s =new Scanner(System.in);
         String str=s.nextLine();
-        String space=" ";
         for(int i=0;i<str.length();i++){
             if(str.charAt(i)==' '){
                 count++;
