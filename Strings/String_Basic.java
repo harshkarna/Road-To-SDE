@@ -32,14 +32,14 @@ public class String_Basic {
 
 
         System.out.println(str1.substring(2));// start from index 2
-        System.out.println(str1.substring(1,5));// start from index 1(inclusve ),5 (exclusive)
+        System.out.println(str1.substring(1,6));// start from index 1(inclusve ),5 (exclusive)
 
-        Scanner s=new Scanner(System.in);
-        str =s.nextLine();
-        str1=s.nextLine();
-        System.out.println(str +" "+str.length());
-        System.out.println(str1 +" "+str1.length());
-        //https://www.javaartifacts.com/difference-next-nextline/
+//        Scanner s=new Scanner(System.in);
+//        str =s.nextLine();
+//        str1=s.nextLine();
+//        System.out.println(str +" "+str.length());
+//        System.out.println(str1 +" "+str1.length());
+//        //https://www.javaartifacts.com/difference-next-nextline/
 
 
 
