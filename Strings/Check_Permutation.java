@@ -61,6 +61,7 @@ public class Check_Permutation {
 
     public static void main(String[] args) {
 
+
         String str1="abcdef";
         String str2="dfeaba";
         boolean check = checkPermutation(str1,str2);
