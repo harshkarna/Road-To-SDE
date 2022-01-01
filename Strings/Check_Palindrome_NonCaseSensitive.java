@@ -31,34 +31,39 @@ package com.Strings;
 
 import java.util.Scanner;
 
-public class Check_Palindrome {
+//Solved by Char array
+public class Check_Palindrome_NonCaseSensitive {
+    public static char toLowerCase(char ch){
+        if(ch>='a' && ch<='z'){
+            return ch;
+        }
+        else{
+            char temp= (char) (ch-'A'+'a');//ascii values
+            return temp;
+        }
+    }
 
-    //Approach 1
-//    calculate reverse string and then compare with str
 
-//    Approach 2
-//    Below
+    public static boolean check_palindrome(char[] ch){
+        int s=0;
+        int e=ch.length-1;
 
-    public static int check_palindrome(String str){
-        int b=0;
-        int e=str.length()-1;
-
-        for(int i=0;i<=(str.length()/2);i++){
-            if(str.charAt(b)!=str.charAt(e)){
-                System.out.println("not palindrome");
-                return 0;
+        while(s<=e){
+            if(toLowerCase(ch[s])!=toLowerCase(ch[e])){
+                return false;
             }
-            b++;
+            s++;
             e--;
         }
-        System.out.println("its a palindrome");
-        return 1;
+        return true;
     }
 
     public static void main(String[] args) {
         Scanner s =new Scanner(System.in);
         String str=s.nextLine();
-        check_palindrome(str);
+        char ch[] =str.toCharArray();
+        System.out.println(check_palindrome(ch));
+
 
     }
 }
