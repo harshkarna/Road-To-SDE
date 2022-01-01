@@ -11,9 +11,9 @@ public class String_Basic {
         System.out.println(str.length()); // to get length
         System.out.println(str.charAt(2)); //to access particular index element
 
-        String str1 ="Coding";
+        String str1 ="Codingiunh";
         String str2 =" is Fun";
-        String str3 ="Coding";
+        String str3 ="Cmod";
 
         System.out.println(str1+str2); //to concatenate
 
