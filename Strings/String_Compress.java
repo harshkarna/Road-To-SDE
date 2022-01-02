@@ -55,10 +55,10 @@ public class String_Compress {
         }
         // for last group of elemnent
         if(count==1){
-            ans=ans+str.substring(i-1,i);
+            ans=ans+str.substring(i-1,i); //i will  be on last element
         }
         else{
-            ans=ans+str.substring(i-1,i)+count;
+            ans=ans+str.substring(i-1,i)+count; // i will be on last element
         }
         System.out.println(ans);
     }

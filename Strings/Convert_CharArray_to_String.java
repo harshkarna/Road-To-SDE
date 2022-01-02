@@ -19,8 +19,7 @@ public class Convert_CharArray_to_String {
 
         // Printing converted string from character array
         System.out.println(toString(s));
+
     }
-
-
 
 }
