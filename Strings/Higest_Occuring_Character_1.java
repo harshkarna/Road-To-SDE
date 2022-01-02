@@ -32,34 +32,36 @@
 
 package com.Strings;
 
-
-// n trvaersal approach--could be better
-public class Higest_Occuring_Character {
+public class Higest_Occuring_Character_1 {
 
 
     public static void  highestOccChar(String str){
-        int max_count=0;
-        char max_char=0;
-        for(int i=0;i<str.length();i++){
-            char k=str.charAt(i);
-            int count=0;
-            for(int j=i;j<str.length();j++){
-                char n=str.charAt(j);
-                if(k==n){
-                    count++;
-                }
-            }
-            if(count > max_count){
-                max_count=count;
-                max_char=str.charAt(i);
-            }
-        }
-        System.out.println(max_char+" "+max_count);
+        //creating an array of count of characters
+      int arr[]=new int[26];
+       for(int i=0;i<str.length();i++){
+           char ch =str.charAt(i);
+           int n= ch-'a';
+           arr[n]++;
+       }
+
+       //now getting the max value from last created array
+        int max=Integer.MIN_VALUE;// storing frequency
+        int ans=Integer.MIN_VALUE;;// storing that value with highest frequency
+       for(int i=0;i<arr.length;i++){
+           if(arr[i]>max){
+               ans=i;
+               max=arr[i];
+           }
+       }
+
+       char finalAnswer= (char) (ans +'a');
+        System.out.println(finalAnswer);
+
     }
 
     public static void main(String[] args) {
 
-        String str= "xy";
+        String str= "test";
         highestOccChar(str);
     }
 }

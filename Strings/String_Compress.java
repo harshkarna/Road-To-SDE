@@ -30,7 +30,7 @@
 
 package com.Strings;
 
-public class Compress_String {
+public class String_Compress {
     public static void CompressString(String str){
         int count=1;
         String ans="";

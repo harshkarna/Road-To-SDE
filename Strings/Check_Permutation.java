@@ -63,7 +63,7 @@ public class Check_Permutation {
 
 
         String str1="abcdef";
-        String str2="dfeaba";
+        String str2="baedc";
         boolean check = checkPermutation(str1,str2);
         System.out.println(check);
 
