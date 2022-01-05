@@ -45,7 +45,7 @@ public class String_Compression_LC {
 
     public static void main(String[] args) {
 
-        char[] chars= {'a','a','b','b','c','c','d','d','d'};
+        char[] chars= {'a','a','b','b','c','c','d','d','d','d'};
         compressString(chars);
 
     }

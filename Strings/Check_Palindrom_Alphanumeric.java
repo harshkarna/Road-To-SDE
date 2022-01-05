@@ -85,9 +85,9 @@ public class Check_Palindrom_Alphanumeric {
 
     public static void main(String[] args) {
 
-        String str="A man, a plan, a canal: Panama";
-        String str1="N1oo?1n";
-        isPalindrome(str);
+        String str="N2 i&nJA?a& jnI2n";
+        String str1="N1oo1n";
+        isPalindrome(str1);
 
 
     }
