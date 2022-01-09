@@ -1,0 +1,117 @@
+//Total Sum on the Boundaries and Diagonals
+//
+//        For a given two-dimensional square matrix of size (N x N). Find the total sum of elements on both the diagonals and at all the four boundaries.
+//        Input format:
+//        The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+//
+//        First line of each test case or query contains a single integer value, 'N' representing the 'rows' and 'columns' for the two-dimensional square matrix.
+//
+//        Second line onwards, the next 'N' lines or rows represent the ith row values.
+//
+//        Each of the ith row constitutes 'N' column values separated by a single space.
+//        Output format:
+//        For each test case, print the single integer denoting the sum.
+//
+//        Output for every test case will be printed in a seperate line.
+//        Constraints:
+//        1 <= t <= 10^2
+//        0 <= N <= 10^3
+//        Time Limit: 1sec
+//        Sample input 1:
+//        1
+//        3
+//        1 2 3
+//        4 5 6
+//        7 8 9
+//        Sample Output 1:
+//        45
+//        Explanation for Sample Output 1:
+//        The boundary elements are 1, 2, 3, 6, 9, 8, 7 and 4.
+//
+//        The first-diagonal elements are 1, 5 and 9.
+//
+//        The second-diagonal elements are 3, 5 and 7.
+//
+//        We just need to add all these numbers making sure that no number is added twice. For example, '1' is both a boundary element and a first-diagonal element similarly, '5' contributes to both the diagonals but they won't be added twice.
+//
+//        Hence, we add up, [1 + 2 + 3 + 6 + 9 + 8 + 7 + 4 + 5] to give 45 as the output.
+//        Sample input 2:
+//        2
+//        5
+//        1 2 3 4 5
+//        6 7 8 9 10
+//        11 12 13 14 15
+//        16 17 18 19 20
+//        21 22 23 24 25
+//        4
+//        1 2 3 10
+//        4 5 6 11
+//        7 8 9 12
+//        13 14 15 16
+//        Sample Output 2:
+//        273
+//        136
+
+package com.Two_Dimensional_Array;
+
+import java.util.Scanner;
+
+public class Total_Sum_on_BoundariesAndDiagonal {
+
+    public static void totalSumonBoundandDiag(int[][] arr){
+        int sum=0;
+        int n=arr.length;
+        //first digaonal
+        for(int i=0,j=0;i<n && j<n;i++,j++){
+            sum=sum+arr[i][j];
+            arr[i][j]=0;
+        }
+        //Second diagonal
+        for(int i=0,j=n-1;i<n && j>=0;i++,j--){
+           sum=sum+arr[i][j];
+            arr[i][j]=0;
+        }
+
+        //top and bottom horizontal rows
+        for(int i=0;i<n;i=i+n-1){
+            for(int j=0;j<n;j++){
+                sum=sum+arr[i][j];
+                arr[i][j]=0;
+
+            }
+        }
+        //left and right vertical rows
+        for(int j=0;j<n;j=j+n-1){
+            for(int i=0;i<n;i++){
+                sum=sum+arr[i][j];
+                arr[i][j]=0;
+            }
+        }
+        System.out.println(sum);
+    }
+
+
+    public static void main(String[] args) {
+
+//        Scanner sc =new Scanner(System.in);
+//        System.out.println("Enter the no.of Rows");
+//        int rows=sc.nextInt();
+//        System.out.println("Enter the no.of Cols");
+//        int cols=sc.nextInt();
+//
+//        int[][] arr =new int[rows][cols];
+//
+//        //Take input from array
+//        for(int i=0;i<rows;i++){
+//            for(int j=0;j<cols;j++){
+//                System.out.println("Enter the element at "+i+" row "+j+" columns");
+//                arr[i][j]=sc.nextInt();
+//
+//            }
+//        }
+        int[][] arr1={{1,2,3},{4,5,6},{7,8,9}};
+        int[][] arr2={{1,2,3,10},{4,5,6,11},{7,8,9,12},{13,14,15,16}};
+        totalSumonBoundandDiag(arr2);
+
+    }
+}
