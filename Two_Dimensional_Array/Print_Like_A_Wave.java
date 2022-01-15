@@ -54,29 +54,40 @@ public class Print_Like_A_Wave {
 
     public static void print_wave(int[][] arr){
         boolean down=true;
+        int arr1[] =new int[arr.length*arr[0].length];
+        int k=0;
 
         for(int j=0;j<arr[0].length;j++){
             if(down){
                 for(int i=0;i<arr.length;i++){
-                    System.out.print(arr[i][j]+" ");
+//                    System.out.print(arr[i][j]+" ");
+                    arr1[k]=arr[i][j];
+                    k++;
                 }
                 down=false;
                 continue;
             }
             else if(!down){
                 for(int i=arr.length-1;i>=0;i--){
-                    System.out.print(arr[i][j]+" ");
+//                    System.out.print(arr[i][j]+" ");
+                    arr1[k]=arr[i][j];
+                    k++;
                 }
                 down=true;
                 continue;
             }
         }
+
+        //display of array
+        for(int i=0;i < arr1.length; i++){
+            System.out.print(arr1[i]+" ");
+        }
     }
-    
+
     public static void main(String[] args) {
 
-        int[][] arr1={{1,2,3},{4,5,6},{7,8,9}};
-        print_wave(arr1);
+        int[][] arr={{1,2,3},{4,5,6},{7,8,9}};
+        print_wave(arr);
 
 
     }

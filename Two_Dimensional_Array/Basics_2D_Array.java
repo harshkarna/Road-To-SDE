@@ -14,5 +14,8 @@ public class Basics_2D_Array {
         System.out.println(arr2d1[0].length);
 
 
+        int[][] arr2d2={{1,2,3,4,5,6,7,8,9}};
+
+
     }
 }
