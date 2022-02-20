@@ -24,14 +24,22 @@ public class String_Compression_LC {
             //calculate count
             int count=j-i;
 
-            //converting count to char so as to add count in  char array
+
             if(count >1){
-                char[] cnt=Integer.toString(count).toCharArray(); // technique to convert int to char array
-                for(char ch: cnt){
-                    chars[ans_index]=ch;
-                    ans_index++;
-                }
+                char cnt =(char) count;
+                chars[ans_index]=cnt;
+                ans_index++;
+
             }
+
+            //converting count to char so as to add count in  char array
+//            if(count >1){
+//                char[] cnt=Integer.toString(count).toCharArray(); // technique to convert int to char array
+//                for(char ch: cnt){
+//                    chars[ans_index]=ch;
+//                    ans_index++;
+//                }
+//            }
 
             //moving to new different character
             i=j;

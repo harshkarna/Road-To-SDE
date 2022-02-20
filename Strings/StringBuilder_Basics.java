@@ -13,7 +13,7 @@ public class StringBuilder_Basics {
         //to get char at index
         System.out.println(sb.charAt(0));
 
-        //to set char at partcluar index
+//        to set char at partcluar index
         sb.setCharAt(0,'P');
         System.out.println(sb);
 
@@ -21,19 +21,19 @@ public class StringBuilder_Basics {
         sb.insert(0,'S');
         System.out.println(sb);
 
-        //delete
+//        //delete
         sb.delete(0,1);
         System.out.println(sb);
         sb.deleteCharAt(0);
         System.out.println(sb);
-
-        //append
+//
+//        //append
         sb.append("String");
         System.out.println(sb);
         sb.append('a');
         System.out.println(sb);
-
-        //replace
+//
+//        //replace
         sb.replace(0,1,"@40");
         System.out.println(sb);
 

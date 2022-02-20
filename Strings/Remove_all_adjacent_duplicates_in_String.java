@@ -35,7 +35,7 @@ public class Remove_all_adjacent_duplicates_in_String {
             if(str.charAt(i)==str.charAt(i-1)){
                 index=i-1;
                 str=str.substring(0,index)+str.substring(index+2);
-                i=0;
+                i=1;
             }
         }
         System.out.println(str);

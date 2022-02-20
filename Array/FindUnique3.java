@@ -2,6 +2,7 @@ package com.Array;
 
 public class FindUnique3 {
     //better solution using XOR
+    //xor -> same =0, different =1
     public static void main(String[] args) {
 
         int arr[]= { 2,4,7,2,7};

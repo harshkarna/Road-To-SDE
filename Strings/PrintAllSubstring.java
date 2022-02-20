@@ -39,8 +39,8 @@ public class PrintAllSubstring {
 
     public static void main(String[] args) {
         Scanner s =new Scanner(System.in);
-        String str=s.nextLine();
-//        String str="pqrs";
+//        String str=s.nextLine();
+        String str="pqrs";
 
         for(int i=0;i<str.length();i++){
             for(int j=i;j<str.length();j++){

@@ -44,7 +44,7 @@ import java.util.Scanner;
 public class check_array_Rotaion {
 
     public static int checkarrayrotaion(int arr[]){
-        int index=0;
+
         for(int i=0;i<arr.length-1;i++){
             if(arr[i]>arr[i+1]){
                return i+1;

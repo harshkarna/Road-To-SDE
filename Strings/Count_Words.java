@@ -32,12 +32,19 @@ public class Count_Words {
         int count=0;
         Scanner s =new Scanner(System.in);
         String str=s.nextLine();
-        for(int i=0;i<str.length();i++){
-            if(str.charAt(i)==' '){
-                count++;
-            }
 
+        //base case empty string
+        if (str.isEmpty()){
+            System.out.println(count);
         }
-        System.out.println(count+1);
+
+        else{
+            for(int i=0;i<str.length();i++){
+                if(str.charAt(i)==' '){
+                    count++;
+                }
+            }
+            System.out.println(count+1);
+        }
     }
 }

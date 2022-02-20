@@ -31,7 +31,7 @@ package com.Strings;
 
 public class Remove_String {
 
-    public static String remove_char(String str,String str1){
+    public static String remove_string(String str,String str1){
         String ans="";
         for(int i=0;i<str.length();i++){
             if(!str1.equals(str.substring(i,i+1))){
@@ -45,6 +45,6 @@ public class Remove_String {
     public static void main(String[] args) {
         String str="xxyyzxx";
         String str1 ="y";
-        System.out.println(remove_char(str,str1));
+        System.out.println(remove_string(str,str1));
     }
 }

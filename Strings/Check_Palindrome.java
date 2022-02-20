@@ -43,7 +43,16 @@ public class Check_Palindrome {
         int b=0;
         int e=str.length()-1;
 
-        for(int i=0;i<=(str.length()/2);i++){
+//        for(int i=0;i<=(str.length()/2);i++){
+//            if(str.charAt(b)!=str.charAt(e)){
+//                System.out.println("not palindrome");
+//                return 0;
+//            }
+//            b++;
+//            e--;
+//        }
+
+        while(b<=e){
             if(str.charAt(b)!=str.charAt(e)){
                 System.out.println("not palindrome");
                 return 0;
