@@ -62,9 +62,9 @@ public class Array_Intersection {
 
     public static void find_intersection(int arr1[], int arr2[]){
 
-
         Arrays.sort(arr1);
         Arrays.sort(arr2);
+
 
         for (int i : arr1)
         {

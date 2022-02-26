@@ -58,6 +58,8 @@ public class Array_Equilibrium_Index {
 
     public static void equilibirium_index(int arr[]){
 
+        //bruteforce approach
+
         int i=0;
         while(i <arr.length){
             int lsum=0;
@@ -91,13 +93,13 @@ public class Array_Equilibrium_Index {
         int i=0;
 
        while(i<arr.length){
-           total_sum+=arr[i];
+           rsum+=arr[i];
            i++;
         }
 
        int index=0;
        while(index <arr.length){
-           rsum=total_sum-lsum-arr[index];
+           rsum=rsum-arr[index];
            if(lsum==rsum){
                return index;
            }
