@@ -22,11 +22,11 @@ package com.Recusion;
 public class Number_of_digits {
 
     public static int no_of_digits(int n){
-        if(n==0){
+        if(n==0){ //base case
             return 0;
         }
 
-        int smallcase=no_of_digits(n/10);
+        int smallcase=no_of_digits(n/10); ///small case
         return smallcase+1;
 
     }
@@ -35,5 +35,6 @@ public class Number_of_digits {
         int n =156;
         int anw =no_of_digits(n);
         System.out.println(anw);
+
     }
 }
