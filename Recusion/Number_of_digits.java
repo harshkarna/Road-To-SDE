@@ -22,7 +22,7 @@ package com.Recusion;
 public class Number_of_digits {
 
     public static int no_of_digits(int n){
-        if(n==0){ //base case
+        if(n==0){ //base case 123
             return 0;
         }
 
