@@ -22,7 +22,7 @@ package com.Recusion;
 public class Number_of_digits {
 
     public static int no_of_digits(int n){
-        if(n==0){ //base case 123
+        if(n==0){ //base case can be 1 also
             return 0;
         }
 
@@ -32,7 +32,7 @@ public class Number_of_digits {
     }
 
     public static void main(String[] args) {
-        int n =156;
+        int n =123456;
         int anw =no_of_digits(n);
         System.out.println(anw);
 
