@@ -42,8 +42,8 @@ public class First_Index_of_Number {
 
     public static void main(String[] args) {
 
-        int arr[]={1,2,3,4};
-        int x=1;
+        int arr[]={9,8,10,8};
+        int x=8;
         System.out.println(find_index(arr,x));
 
     }
