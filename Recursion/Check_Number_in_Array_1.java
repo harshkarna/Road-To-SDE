@@ -28,6 +28,9 @@ package com.Recursion;
 
 public class Check_Number_in_Array_1 {
 
+    //better solution as we are not using new array space at every recursive call
+
+
     public static boolean check_number(int arr[],int x,int startIndex){
         //taking base case as 1
 
