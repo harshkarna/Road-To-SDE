@@ -17,7 +17,7 @@
 //        Sample Output 2 :
 //        1
 
-package com.Recusion;
+package com.Recursion;
 
 public class Number_of_digits {
 

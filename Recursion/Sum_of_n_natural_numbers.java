@@ -1,4 +1,4 @@
-package com.Recusion;
+package com.Recursion;
 
 public class Sum_of_n_natural_numbers {
 

@@ -18,7 +18,7 @@
 //        Sample Output 2 :
 //        32
 
-package com.Recusion;
+package com.Recursion;
 
 public class Calculate_power {
 

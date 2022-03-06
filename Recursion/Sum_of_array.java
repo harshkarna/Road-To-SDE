@@ -20,7 +20,7 @@
 //        4 2 1
 //        Sample Output 2 :
 //        7
-package com.Recusion;
+package com.Recursion;
 
 public class Sum_of_array {
 
@@ -41,7 +41,7 @@ public class Sum_of_array {
 
     public static void main(String[] args) {
 
-        int arr[]={4,2,1};
+        int arr[]={4,2,-1};
         System.out.println(sum_array(arr));
 
     }

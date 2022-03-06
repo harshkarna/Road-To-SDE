@@ -18,7 +18,7 @@
 //        1 2 3 4
 //
 
-package com.Recusion;
+package com.Recursion;
 
 public class Print_numbers {
 

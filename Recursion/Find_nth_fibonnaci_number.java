@@ -1,4 +1,4 @@
-package com.Recusion;
+package com.Recursion;
 
 public class Find_nth_fibonnaci_number {
 
