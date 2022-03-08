@@ -32,14 +32,14 @@ public class Last_Index_of_Number {
         }
 
         int small_case=last_index(arr,x,startIndex+1);
-        if(small_case!=-1){
+        if(small_case!=-1){  //once we get our last value , so while going above the pointer will always come to this
             return small_case;
         }
 
-       else if(arr[startIndex]==x){
+       else if(arr[startIndex]==x){  //this will only 1 time when last index will be encountered
             return startIndex;
         }
-        else return -1;
+        else return -1;  //this will happen happen the last element is not the value we are looking for
 
     }
 
@@ -49,10 +49,12 @@ public class Last_Index_of_Number {
     }
         public static void main(String[] args) {
 
-        int arr[]={9,8,8,10};
-        int x=9;
+        int arr[]={1,2,3,2};
+        int x=2;
 
-        System.out.println(last_index(arr,x));
+        last_index(arr,x);
+
+//        System.out.println(last_index(arr,x));
     }
 
 }
