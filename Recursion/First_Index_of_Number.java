@@ -36,6 +36,7 @@ public class First_Index_of_Number {
     }
 
     public static int find_index(int arr[],int x){
+
         return find_index(arr,x,0);
     }
 
