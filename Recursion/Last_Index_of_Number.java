@@ -25,6 +25,25 @@ package com.Recursion;
 
 public class Last_Index_of_Number {
 
+//    public static int last_index(int arr[],int x,int startIndex){
+//
+//        if(startIndex==arr.length){
+//            return -1;
+//        }
+//
+//        int small_case=last_index(arr,x,startIndex+1);
+//
+//        if(small_case!=-1){  //once we get our last value , so while going above the pointer will always come to this
+//            return small_case;
+//        }
+//
+//        else if(arr[startIndex]==x){  //this will only 1 time when last index will be encountered
+//            return startIndex;
+//        }
+//        else return -1;  //this will happen happen the last element is not the value we are looking for
+//
+//    }
+
     public static int last_index(int arr[],int x,int startIndex){
 
         if(startIndex==arr.length){
@@ -32,11 +51,12 @@ public class Last_Index_of_Number {
         }
 
         int small_case=last_index(arr,x,startIndex+1);
+
         if(small_case!=-1){  //once we get our last value , so while going above the pointer will always come to this
             return small_case;
         }
 
-       else if(arr[startIndex]==x){  //this will only 1 time when last index will be encountered
+        else if(arr[startIndex]==x){  //this will only 1 time when last index will be encountered
             return startIndex;
         }
         else return -1;  //this will happen happen the last element is not the value we are looking for

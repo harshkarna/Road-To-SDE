@@ -36,7 +36,7 @@ public class Calculate_power {
     public static void main(String[] args) {
 
         int x=2;
-        int n=8;
+        int n=5;
 
         int ans =power(x,n);
         System.out.println(ans);
