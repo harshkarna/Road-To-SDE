@@ -12,7 +12,7 @@
 //
 //        The first and the only line of each test case or query contains an integer 'N'.
 //        Output Format :
-//        For each test case, print the elements of the arra/listy separated by a single space.
+//        For each test case, print the elements of the array/list separated by a single space.
 //
 //        Output for every test case will be printed in a separate line.
 //        Constraints :

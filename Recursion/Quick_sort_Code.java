@@ -66,7 +66,7 @@ public class Quick_sort_Code {
         return pivotIndex;
     }
 
-    public static void quick_sort(int arr[], int startIndex,int endIndex){
+    public static void quick_sort(int arr[],  int startIndex,int endIndex){
         //Creating base case
         if(startIndex>=endIndex){
             return;

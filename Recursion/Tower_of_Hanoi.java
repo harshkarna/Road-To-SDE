@@ -50,7 +50,7 @@ public class Tower_of_Hanoi {
             return;
         }
             tower_of_hanoi(n - 1, source, destination, auxiliary);
-            System.out.println(source + " to " + destination);
+            System.out.println("Disk " + n + " move from "+ source + " to " + destination);
             tower_of_hanoi(n - 1, auxiliary, source, destination);
 
     }
@@ -58,7 +58,7 @@ public class Tower_of_Hanoi {
 
     public static void main(String[] args) {
 
-        int n =3;
+        int n =4;
         char source='a';
         char auxiliary='b';
         char destination='c';
