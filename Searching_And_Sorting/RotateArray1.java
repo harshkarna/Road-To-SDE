@@ -6,12 +6,12 @@ public class RotateArray1 {
     public static int[] rotatearray(int arr[],int toRotate) {
 
         int n = arr.length;
-        for (int i = 0; i < toRotate; i++) {
-            int temp = arr[0];
+        for (int i = 0; i < toRotate; i++) { //to keep repeating this process till torotate
+            int temp = arr[0]; //storing first element in temp
             for (int j = 0; j < n - 1; j++) {
-                arr[j] = arr[j + 1];
+                arr[j] = arr[j + 1]; //shifting all elements left wise
             }
-            arr[n - 1] = temp;
+            arr[n - 1] = temp;//puting the temp elemnt at last
         }
         return arr;
 

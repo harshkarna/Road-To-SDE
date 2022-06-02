@@ -26,7 +26,7 @@ public class Remove_x_from_string {
 
         public static void main(String[] args) {
 
-        String str="xqewxxxewrwerxerwerewx";
+        String str="x qewxxxewrwerxerwerewx";
         char ch='x';
         System.out.println(remove_char(str,ch));
 

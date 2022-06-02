@@ -24,18 +24,26 @@ public class Replace_pi {
         }
 
         String smallcase=replace_pi(str.substring(1));
-        if(str.charAt(0)=='p' && smallcase.charAt(0)=='i'){
+
+        if(str.charAt(0)=='p' && str.charAt(1)=='i'){
             return "3.14" +smallcase.substring(1);
         }
         else {
             return str.charAt(0)+smallcase;
         }
+
+//        if(str.charAt(0)=='p' && smallcase.charAt(0)=='i'){
+//            return "3.14" +smallcase.substring(1);
+//        }
+//        else {
+//            return str.charAt(0)+smallcase;
+//        }
     }
 
 
     public static void main(String[] args) {
 
-        String str="xpixpi";
+        String str="xpix";
         System.out.println(replace_pi(str));
 
 

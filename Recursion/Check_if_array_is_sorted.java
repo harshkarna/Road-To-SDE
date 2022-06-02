@@ -16,7 +16,7 @@ public class Check_if_array_is_sorted {
         if(!smallcase){
             return false;
         }
-        else if(arr[0]<=arr[1]){
+        if (arr[0]<=arr[1]){
             return true;
         }
         else{
@@ -46,7 +46,7 @@ public class Check_if_array_is_sorted {
 
     public static void main(String[] args) {
         int arr[]={2,1,3,4,5};
-        System.out.println( check_sorted_2(arr));
+        System.out.println( check_sorted_1(arr));
 
     }
 }

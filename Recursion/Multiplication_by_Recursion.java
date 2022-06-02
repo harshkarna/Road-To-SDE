@@ -26,12 +26,12 @@ package com.Recursion;
 public class Multiplication_by_Recursion {
 
     public static int multiplication(int m, int n){
-        if(n==1){
-            return m;
-        }
-        else if(n==0){
+        if(n==0){
             return 0;
         }
+//        else if(n==1){
+//            return m;
+//        }
 
         int smallcase=multiplication(m,n-1);
         return m+smallcase;
@@ -41,7 +41,7 @@ public class Multiplication_by_Recursion {
     public static void main(String[] args) {
 
         int m=3;
-        int n=1;
+        int n=0;
         System.out.println(multiplication(m,n));
 
 

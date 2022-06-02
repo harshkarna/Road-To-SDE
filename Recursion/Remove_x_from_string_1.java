@@ -2,7 +2,6 @@ package com.Recursion;
 
 public class Remove_x_from_string_1 {
 
-    //My own favourite
 
     public static String remove_char(String str, char ch){
         if(str.length()==0){  //base case
@@ -20,7 +19,7 @@ public class Remove_x_from_string_1 {
 
         public static void main(String[] args) {
 
-        String str="xbxacx";
+        String str="x bxacx";
         char ch='x';
         System.out.println(remove_char(str,ch));
 

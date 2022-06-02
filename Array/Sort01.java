@@ -43,7 +43,23 @@ import java.util.Scanner;
 
 public class Sort01 {
 
-    //Need Improve code
+    public static void sort0_1(int arr[]) {
+
+        int nz = 0;
+        for (int i = 0; i < arr.length; i++) {
+            //only take action if current i is 0 and replace i with nz,  otherwise move i
+            if (arr[i] == 0) {
+                int temp = arr[i];
+                arr[i] = arr[nz];
+                arr[nz] = temp;
+                nz++;
+            }
+        }
+        //display of array
+        for (int i =0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -58,16 +74,7 @@ public class Sort01 {
             arr[i] = sc.nextInt();
         }
 
-         for(int i=0;i< arr.length;i++){
-             if(arr[i]==0){
-                 System.out.print("0"+" ");
-             }
-         }
-        for(int j=0;j< arr.length;j++){
-            if(arr[j]==1){
-                System.out.print("1"+" ");
-            }
-        }
+        sort0_1(arr);
 
     }
 

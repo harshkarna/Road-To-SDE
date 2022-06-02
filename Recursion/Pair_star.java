@@ -29,7 +29,7 @@ public class Pair_star {
         }
 
         String smallcase=add_star(str.substring(1));
-        if(str.charAt(0)==smallcase.charAt(0)){
+        if(str.charAt(0)==str.charAt(1)){
             return str.charAt(0)+"*"+smallcase;
         }
         else{
@@ -41,7 +41,7 @@ public class Pair_star {
     public static void main(String[] args) {
 
 
-        String str="aaaa";
+        String str="lllll";
         System.out.println(add_star(str));
 
 

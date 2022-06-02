@@ -27,15 +27,13 @@ public class Replace_char_in_String {
         }
 
         String smallcase=replace_char(str.substring(1),a,x);
-        if(str.charAt(0)!=a){
-            return str.charAt(0)+smallcase;
-        }
-        else if(str.charAt(0)==a){
+        if(str.charAt(0)==a){
             return x+smallcase;
         }
-        else{
-            return str;
+        else {
+            return str.charAt(0)+smallcase;
         }
+
     }
 
     public static void main(String[] args) {

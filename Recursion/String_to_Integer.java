@@ -28,14 +28,14 @@ public class String_to_Integer {
             return 0;
         }
 
-        double smallcase =str_to_int(str.substring(1));
-        double ans=str.charAt(0)-'0';
+        int smallcase =str_to_int(str.substring(1)); ///231
+        int ans=str.charAt(0)-'0';// 1
         return (int) (ans * Math.pow(10,str.substring(1).length()) + smallcase);
 
     }
 
     public static void main(String[] args) {
-      String str="123479304";
+      String str="1231";
       System.out.println(str_to_int(str));
 
     }

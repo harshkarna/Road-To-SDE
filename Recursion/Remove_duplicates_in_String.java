@@ -9,7 +9,7 @@
 //        1 <= |S| <= 10^3
 //        where |S| represents the length of string
 //        Sample Input 1 :
-//        aabccba
+//        a abccba
 //        Sample Output 1 :
 //        abcba
 //        Sample Input 2 :

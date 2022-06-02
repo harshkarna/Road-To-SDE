@@ -58,7 +58,7 @@ public class Tower_of_Hanoi {
 
     public static void main(String[] args) {
 
-        int n =4;
+        int n =2;
         char source='a';
         char auxiliary='b';
         char destination='c';

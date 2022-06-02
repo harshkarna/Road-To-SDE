@@ -4,19 +4,17 @@ public class Push_0_to_end_1 {
 
 ////Better Solution - without initialising additional array
     public static int[] push0toend(int arr[]){
-       int i=0;
-       int k=0;
-       int temp;
+        int nz=0;
+        int temp;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                temp=arr[i];
+                arr[i]=arr[nz];
+                arr[nz]=temp;
+                nz++;
 
-       while(i<arr.length){
-           if(arr[i]!=0){
-               temp=arr[k];
-               arr[k]=arr[i];
-               arr[i]=temp;
-               k++;
-           }
-           i++;
-       }
+            }
+        }
 
         return arr;
 

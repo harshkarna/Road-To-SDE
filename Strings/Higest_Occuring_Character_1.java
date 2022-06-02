@@ -42,6 +42,10 @@ public class Higest_Occuring_Character_1 {
            char ch =str.charAt(i);
            int n= ch-'a';
            arr[n]++;
+
+//           for(int k:arr){
+//               System.out.println(k);
+//           }
        }
 
        //now getting the max value from last created array
