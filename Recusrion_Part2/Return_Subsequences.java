@@ -23,12 +23,16 @@ public class Return_Subsequences {
         String smallcase[]= printSubsequences(str.substring(1)); //let recusrion do yz work
         String ans[] =new String[smallcase.length *2 ]; //as we know that final answer is double of length work done by smallcase
 
+
+        int k =0;
         for (int i=0; i<smallcase.length;i++){ //copying smallcase work in final ans
-            ans[i]=smallcase[i];
+            ans[k]=smallcase[i];
+            k++;
         }
 
-        for (int i=0;i<smallcase.length;i++){ //copying again but now appending fisrt char of str with each and every work of smallcase
-            ans[i+smallcase.length]=str.charAt(0) +smallcase[i];
+        for (int i=0;i<smallcase.length;i++){    // copying again but now appending fisrt char of str with each and every work of smallcase
+            ans[k]=str.charAt(0) +smallcase[i];  // ans[i+small.length]
+            k++;
         }
 
         return ans;
