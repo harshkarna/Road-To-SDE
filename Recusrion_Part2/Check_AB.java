@@ -1,6 +1,7 @@
 //Check AB
 //
-//        Suppose you have a string, S, made up of only 'a's and 'b's. Write a recursive function that checks if the string was generated using the following rules:
+//        Suppose you have a string, S, made up of only 'a's and 'b's. Write a recursive function that checks if
+//        the string was generated using the following rules:
 //        a. The string begins with an 'a'
 //        b. Each 'a' is followed by nothing or an 'a' or "bb"
 //        c. Each "bb" is followed by nothing or an 'a'
@@ -25,7 +26,23 @@ package com.Recusrion_Part2;
 
 public class Check_AB {
 
+
+//    public static  boolean Check_AB(String str){
+//        if(str.length()==0){
+//            return false;
+//        }
+//
+//        if(str.charAt(0)=='a'){
+//            return false;
+//        }
+//        else{
+//
+//        }
+//
+//    }
+
     public static void main(String[] args) {
+
 
     }
 }
