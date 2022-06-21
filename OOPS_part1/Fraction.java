@@ -29,7 +29,7 @@ public class Fraction {
     }
 
 
-    public void  add(Fraction f2){
+     public void add(Fraction f2){
         //First fraction on which the function is called
         //Second function is passed as arguements
         this.numerator=this.numerator * f2.getDenominator() + this.denominator* f2.getNumerator();
@@ -45,6 +45,7 @@ public class Fraction {
         Fraction f3= new Fraction(newNum, newDen);
         return f3;
     }
+
 
     public int getNumerator() {
         return numerator;
