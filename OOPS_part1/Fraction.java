@@ -38,7 +38,7 @@ public class Fraction {
     }
 
 
-    //adding 2 fractionsand storing result in new object
+    //adding 2 fractions and storing result in new object
     public static Fraction add(Fraction f1, Fraction f2){
         int newNum=f1.numerator * f2.denominator + f1.denominator* f2.numerator;
         int newDen=f1.denominator * f2.denominator;

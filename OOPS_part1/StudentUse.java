@@ -13,6 +13,9 @@ public class StudentUse {
           System.out.println(s1.getNumStudents());
           System.out.println(s2.getNumStudents());
           System.out.println(Student.getNumStudents());//better way to access static variable as with class name
+          s1.setRollNumber(99);
+
+
 
 
 //          s1.name="Harsh";
