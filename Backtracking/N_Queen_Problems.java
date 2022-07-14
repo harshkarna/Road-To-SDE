@@ -12,32 +12,84 @@
 //        Sample Input 1:
 //        4
 //        Sample Output 1 :
-//        0 1 0 0 0 0 0 1 1 0 0 0 0 0 1 0
+//        0 1 0 0
+//        0 0 0 1
+//        1 0 0 0
+//        0 0 1 0
+
 //        0 0 1 0 1 0 0 0 0 0 0 1 0 1 0 0
 
 package com.Backtracking;
 
 public class N_Queen_Problems {
 
-    public static void placeNQueens(int n){
-        int board[][]=new int[n][n];
-        placeQueens(n,0);
+    public static void placeNQueens(int n) {
+        int board[][] = new int[n][n];
+        placeQueens(n, 0, board);
     }
 
-    private static void placeQueens(int n, int row) {
-        if(row== n){
-            //valid Board Configuartion
+    private static void placeQueens(int n, int row,int board[][]) {
+
+        //base case
+        if(row == n ){
+            for (int r = 0; r < n; r++) {
+                for (int c = 0; c < n; c++) {
+                    System.out.print(board[r][c] + " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+            return;
         }
 
-        //Check for all columns
-         //check if its safe to place queen
-            //if its safe -> then place the queen and move to next row
+        //Solve 1 case and rest recusrion will solve
+        //Placing queen
+        for (int column = 0; column < n; column++) {
+            if (canBePlaced(board, row, column, n)) {
+                board[row][column] = 1;
+                placeQueens(n, row + 1, board);
+                board[row][column] = 0;
+            }
+        }
 
     }
 
+    public static boolean canBePlaced(int board[][], int row, int col, int n) {
+        int i = row;
+        int j = col;
+        //check top
+        while (i >= 0) {
+            if (board[i][j] == 1) {
+                return false;
+            }
+            i--;
+        }
+        i = row;
+        j = col;
+        //check top left diag
+        while (j >= 0 && i >= 0) {
+            if (board[i][j] == 1) {
+                return false;
+            }
+            j--;
+            i--;
+        }
+        i = row;
+        j = col;
+        //check top right diag
+        while (j < n && i>=0) {
+            if (board[i][j] == 1) {
+                return false;
+            }
+            j++;
+            i--;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
-
+        int n = 4;
+        placeNQueens(n);
 
     }
 
