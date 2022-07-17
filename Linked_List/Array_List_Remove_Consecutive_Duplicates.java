@@ -17,6 +17,7 @@ public class Array_List_Remove_Consecutive_Duplicates {
         }
 
         System.out.println(al);
+
         return null;
 
     }
