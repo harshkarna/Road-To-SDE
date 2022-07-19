@@ -47,38 +47,64 @@ public class ArrangeNumbersInArray {
         }
     }
 
+    public static void arrangeNumbersinArray(int arr[]){
+        int start=0;
+        int end=arr.length-1;
+        int starting_value=1;
+        int ending_value=2;
+        while(start<=end){
+            arr[start]=starting_value;
+            start++;
+            starting_value+=2;
+            arr[end]=ending_value;
+            end--;
+            ending_value+=2;
+        }
+        printarray(arr);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int arr[] = new int[size];
-        int k=1;
-        int m=2;
+        arrangeNumbersinArray(arr);
 
-        if(size%2==0){
-            for(int i=0;i<(size/2);i++){
-                arr[i]=k;
-                k=k+2;
-            }
-            for (int j=(size-1);j>=((size/2));j--){
-                arr[j]=m;
-                m=m+2;
-            }
-            printarray(arr);
 
-        }
-        else{
-            for(int i=0;i<((size+1)/2);i++){
-                arr[i]=k;
-                k=k+2;
-            }
-            for(int j=(size-1);j>=((size+1)/2);j--){
-                arr[j]=m;
-                m=m+2;
-            }
-            printarray(arr);
-        }
 
     }
+
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int size = sc.nextInt();
+//        int arr[] = new int[size];
+//        int k=1;
+//        int m=2;
+//
+//        if(size%2==0){
+//            for(int i=0;i<(size/2);i++){
+//                arr[i]=k;
+//                k=k+2;
+//            }
+//            for (int j=(size-1);j>=((size/2));j--){
+//                arr[j]=m;
+//                m=m+2;
+//            }
+//            printarray(arr);
+//
+//        }
+//        else{
+//            for(int i=0;i<((size+1)/2);i++){
+//                arr[i]=k;
+//                k=k+2;
+//            }
+//            for(int j=(size-1);j>=((size+1)/2);j--){
+//                arr[j]=m;
+//                m=m+2;
+//            }
+//            printarray(arr);
+//        }
+//
+//    }
 
 
 }
