@@ -4,7 +4,7 @@ public class Sum_of_Arrays_1 {
 
     public static void  sum(int arr1[], int arr2[]){
 
-        int arr3[]=new int[arr1.length+1];
+        int arr3[]=new int[Math.max(arr1.length,arr2.length)+1];
         int i=arr1.length-1;
         int j=arr2.length-1;
         int k=arr3.length-1;
@@ -40,6 +40,7 @@ public class Sum_of_Arrays_1 {
             j--;
 
         }
+        arr3[0]=carry;
 
 
         for(int l:arr3){
@@ -50,8 +51,8 @@ public class Sum_of_Arrays_1 {
 
 
     public static void main(String[] args) {
-        int arr1[]={8,9,7,6,1};
-        int arr2[]={9,5,9};
+        int arr1[]={4,1,2,1};
+        int arr2[]={7,4,1,2};
         sum(arr1,arr2);
 
     }

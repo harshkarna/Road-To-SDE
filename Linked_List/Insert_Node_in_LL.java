@@ -70,7 +70,7 @@ public class Insert_Node_in_LL {
             }
             //Below if to avoid excpetion when we pass index to be inserted out of size of LL
             if(prev!=null){
-                //Storing i-1 next address in new node next
+                //Storing i+1  address in new node next
                 newNode.next= prev.next;
                 //Storing new node address in prev.next
                 prev.next=newNode;

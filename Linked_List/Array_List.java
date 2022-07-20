@@ -16,6 +16,7 @@ public class Array_List {
 //        arr.remove(2);
         arr.set(0,100);
 
+
         System.out.println("Size of array " + arr.size());
         System.out.println(arr);
 //        System.out.println(arr.get(2));
