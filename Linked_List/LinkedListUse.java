@@ -116,8 +116,8 @@ public class LinkedListUse {
 
     public static void main(String[] args) {
 
-//        Node <Integer> head=createLinkedList();
-        Node <Integer> head=takeInputOptimised();
+        Node <Integer> head=createLinkedList();
+//        Node <Integer> head=takeInputOptimised();
 
 //        increment((head);
         print(head);
