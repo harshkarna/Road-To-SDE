@@ -34,14 +34,14 @@
 
 package com.Linked_List;
 
-  //  Tried own
+public class Eliminate_duplicates_from_LL_1 {
 
-public class Eliminate_duplicates_from_LL {
+    //Best Solution
 
     public static Node <Integer> createLinkedList() {
-        Node<Integer> n1=new Node<>(10);
-        Node<Integer> n2=new Node<>(10);
-        Node<Integer> n3=new Node<>(10);
+        Node<Integer> n1=new Node<>(2);
+        Node<Integer> n2=new Node<>(2);
+        Node<Integer> n3=new Node<>(2);
         Node<Integer> n4=new Node<>(3);
         Node<Integer> n5=new Node<>(3);
         Node<Integer> n6=new Node<>(3);
@@ -67,45 +67,28 @@ public class Eliminate_duplicates_from_LL {
 
 
     public static  Node <Integer> eliminate_dupes(Node <Integer> head){
-        Node<Integer> currentNode=head;
-        int flag=0;
+        Node<Integer> prevNode=head;
+        Node<Integer> currentNode= head.next;
 
-
-        while(currentNode.next!=null){
-            if(currentNode.data==currentNode.next.data){
-                currentNode.next=currentNode.next.next;
-                while(currentNode.data==currentNode.next.data){
-                    if(currentNode.next.next==null){
-                        currentNode.next=null;
-                        flag=1;
-                        break;
-                    }
-                    else{
-                        currentNode.next=currentNode.next.next;
-                    }
-
-                }
-                if(flag==1){
-                    break;
-                }
+        while(currentNode!=null){
+            if(prevNode.data!= currentNode.data){
+                prevNode=currentNode;
                 currentNode=currentNode.next;
             }
             else{
-
                 currentNode=currentNode.next;
             }
+            prevNode.next=currentNode;
         }
 
         return head;
-
-
     }
 
     public static void main(String[] args) {
 
         Node <Integer> head=createLinkedList();
         Node <Integer> ans= eliminate_dupes(head);
-        print(head);
+        print(ans);
 
 
 
