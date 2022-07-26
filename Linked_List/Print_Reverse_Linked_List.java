@@ -55,6 +55,35 @@ public class Print_Reverse_Linked_List {
 
     }
 
+
+    public static Node<Integer> reverse_ll(Node <Integer> head){
+        Node <Integer> currentNode=head;
+        Node <Integer> prev=null;
+
+        while(currentNode!=null){
+            Node <Integer> temp=currentNode.next;
+            currentNode.next=prev;
+            prev=currentNode;
+            currentNode=temp;
+
+        }
+        print(prev);
+        return prev;
+    }
+
+    public static  void print(Node<Integer> head) {
+        //Printing Linked List
+        //Note : good practice is keeping head in temp and iterate over temp
+        Node<Integer> temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+
+    }
+
+
     public static void print_ll_in_reverse(Node <Integer> head){
         //base case
         if(head==null){
@@ -70,7 +99,9 @@ public class Print_Reverse_Linked_List {
 
     public static void main(String[] args) {
         Node <Integer> head=createLinkedList();
-        print_ll_in_reverse(head);
+//        print_ll_in_reverse(head);
+        reverse_ll(head);
+
 
 
     }

@@ -84,7 +84,6 @@ public class Append_last_n_to_firts {
         Node<Integer> currentNode;
         int position=0;
 
-
         //Going to last
          while(last.next!=null){
              last=last.next;

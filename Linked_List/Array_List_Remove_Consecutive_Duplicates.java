@@ -7,19 +7,16 @@ public class Array_List_Remove_Consecutive_Duplicates {
 
     public static ArrayList<Integer> removeConsecutiveDuplicates(int arr[]){
         ArrayList <Integer> al= new ArrayList<>();
-        int a=0;
+        al.add(arr[0]);
 
-        for(int i=0;i<arr.length;i++){
-            if(a!=arr[i]){
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]!=arr[i-1]){
                 al.add(arr[i]);
-                a=arr[i];
             }
         }
 
         System.out.println(al);
-
-        return null;
-
+        return al;
     }
 
     public static void main(String[] args) {
