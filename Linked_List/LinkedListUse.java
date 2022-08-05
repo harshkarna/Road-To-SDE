@@ -88,22 +88,16 @@ public class LinkedListUse {
         }
     }
 
-    public static  void print(Node<Integer> head){
+    public static  void print(Node<Integer> head) {
         //Printing Linked List
         //Note : good practice is keeping head in temp and iterate over temp
-        Node<Integer> temp= head;
-        while (temp!=null){
+        Node<Integer> temp = head;
+        while (temp != null) {
             System.out.print(temp.data + " ");
-            temp=temp.next;
+            temp = temp.next;
         }
         System.out.println();
-
-
-//        while (head!=null){
-//            System.out.print(head.data +" ");
-//            head=head.next;
-//        }
-//        System.out.println();
+    }
 
 //        System.out.println("Print "+ head);
 //        System.out.println(head.data);
@@ -112,7 +106,7 @@ public class LinkedListUse {
 //        System.out.println(head.next.next.next.data);
 
 
-    }
+
 
     public static void main(String[] args) {
 
