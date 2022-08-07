@@ -48,10 +48,84 @@
 
 package com.Linked_List;
 
+import java.util.Scanner;
+
 public class Delete_every_n_Nodes {
+    public static Node <Integer> takeInputOptimised(){
+        //TC is O(n) is actually  good
+
+        Scanner s =new Scanner(System.in);
+        int data=s.nextInt();
+        Node<Integer> head = null, tail=null;
+        while(data!=-1){
+            Node <Integer> currentNode= new Node<Integer>(data);
+            //This if will run only once
+            if(head==null){
+                //Make this node as head and tail node
+                head=currentNode;
+                tail=currentNode;
+            }
+            else{
+                tail.next=currentNode;
+                //Update Tail
+                tail=currentNode; // or tail=tail.next;
+            }
+            data=s.nextInt();
+        }
+        return head;
+    }
+
+    public static  void print(Node<Integer> head) {
+        //Printing Linked List
+        //Note : good practice is keeping head in temp and iterate over temp
+        Node<Integer> temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+
+    public static Node <Integer> delete_every_n_nodes(Node <Integer> head, int m , int n){
+        if(m==0){
+            return null;
+        }
+
+        Node <Integer> cn1=head;
+        Node <Integer> cn2=head;
+        int cp1=1;
+        int cp2=0;
+
+        while(cn2!=null ){
+            while(cp1<m && cn2 !=null){
+                cn1=cn1.next;
+                cn2=cn2.next;
+                cp1++;
+            }
+            while(cp2<n && cn2.next!=null){
+                cn2=cn2.next;
+                cp2++;
+
+            }
+            cn1.next=cn2.next;
+            cn2=cn2.next;
+            cn1=cn2;
+            cp1=1;
+            cp2=0;
+
+        }
+        return head;
+
+    }
 
 
     public static void main(String[] args) {
+        Node <Integer> head=takeInputOptimised();
+        head=delete_every_n_nodes(head,2,3);
+        print(head);
+
+
 
 
     }
