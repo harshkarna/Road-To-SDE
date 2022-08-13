@@ -113,9 +113,65 @@ public class Swap_two_Nodes_of_ll {
 
     }
 
+    public static Node <Integer> swap_i_j_1(Node <Integer> head, int i, int j){
+        if(i==0 || j==0){
+            Node <Integer> cn1=head;
+            Node <Integer> cn2=head;
+            Node <Integer> prev2=head;
+            Node <Integer> rest=null;
+
+            int p2=0;
+            while(p2<j){
+                if(p2<j-1){
+                    prev2=prev2.next;
+                }
+                cn2=cn2.next;
+                p2++;
+            }
+
+            rest=cn2.next;
+            cn2.next=cn1.next;
+            prev2.next=cn1;
+            cn1.next=rest;
+
+            return cn2;
+
+        }
+        Node <Integer> cn1=head;
+        Node <Integer> cn2=head;
+        Node <Integer> prev1=head;
+        Node <Integer> prev2=head;
+        Node <Integer> rest=null;
+        int p1=0;
+        int p2=0;
+        while(p1<i){
+            if(p1<i-1){
+                prev1=prev1.next;
+            }
+            cn1=cn1.next;
+            p1++;
+        }
+        while(p2<j){
+            if(p2<j-1){
+                prev2=prev2.next;
+            }
+            cn2=cn2.next;
+            p2++;
+        }
+
+        rest=cn2.next;
+        prev1.next=cn2;
+        cn2.next=cn1.next;
+        prev2.next=cn1;
+        cn1.next=rest;
+
+        return head;
+
+    }
+
     public static void main(String[] args) {
          Node <Integer> head=takeInputOptimised();
-         head=swap_i_j(head,2,5);
+         head=swap_i_j_1(head,0,5);
          print(head);
 
     }

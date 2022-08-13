@@ -33,20 +33,21 @@ public class Insert_node_Recursively_in_LL {
             Node <Integer> new_head= new Node<>(data);
             new_head.next=head;
             return new_head;
+//            head=new_head;
+//            return head;
         }
-        else{
+//        else{
            Node <Integer> smallerhead= insert_recursively(head.next,data, index-1);
            head.next=smallerhead;
 
            return head;
-        }
+//        }
 
     }
 
-
     public static void main(String[] args) {
         Node <Integer> head=createLinkedList();
-        head=insert_recursively(head,3,9);
+        head=insert_recursively(head,9,2);
         print_recursive(head);
 
 

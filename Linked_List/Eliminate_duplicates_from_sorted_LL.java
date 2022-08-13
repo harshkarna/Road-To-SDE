@@ -34,7 +34,7 @@
 
 package com.Linked_List;
 
-public class Eliminate_duplicates_from_LL_2 {
+public class Eliminate_duplicates_from_sorted_LL {
 
     //Best Solution Approach
 
@@ -42,11 +42,11 @@ public class Eliminate_duplicates_from_LL_2 {
         Node<Integer> n1=new Node<>(2);
         Node<Integer> n2=new Node<>(2);
         Node<Integer> n3=new Node<>(2);
-        Node<Integer> n4=new Node<>(3);
-        Node<Integer> n5=new Node<>(3);
-        Node<Integer> n6=new Node<>(3);
+        Node<Integer> n4=new Node<>(2);
+        Node<Integer> n5=new Node<>(2);
+        Node<Integer> n6=new Node<>(2);
         n1.next=n2;
-        n2.next=n3;
+         n2.next=n3;
         n3.next=n4;
         n4.next=n5;
         n5.next=n6;
@@ -75,6 +75,7 @@ public class Eliminate_duplicates_from_LL_2 {
             }
             else{
                 currentNode=currentNode.next;
+
             }
         }
 

@@ -64,7 +64,7 @@ public class Merge_2_sorted_LL {
                 while(tail.next!=null){
                     tail=tail.next;
                 }
-                //Now tail is refreing to last Node
+                //Now tail is referring to last Node
                 //Connect current Node after last Node
                 tail.next=currentNode;
             }
@@ -91,6 +91,8 @@ public class Merge_2_sorted_LL {
         Node<Integer> t1 = head_1;
         Node<Integer> t2 = head_2;
 
+
+       //This will run only once for setting head and tail
         if (t1.data <= t2.data) {
             head = t1;
             tail = t1;
@@ -102,6 +104,7 @@ public class Merge_2_sorted_LL {
             t2 = t2.next;
         }
 
+        //this wwhile loop will run until one LL iteration finishes
         while (t1 != null && t2 != null) {
             if (t1.data <= t2.data) {
                 tail.next = t1;
