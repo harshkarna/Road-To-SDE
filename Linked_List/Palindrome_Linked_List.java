@@ -96,7 +96,7 @@ public class Palindrome_Linked_List {
         Node <Integer> second_head=reverse_ll(get_mid_Node(head).next);
 
         while(second_head!=null){
-            if(currentNode.data!=second_head.data){
+            if(currentNode.data!=second_head.data) {
                 return false;
             }
             currentNode=currentNode.next;
