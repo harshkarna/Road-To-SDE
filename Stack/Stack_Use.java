@@ -1,0 +1,31 @@
+package com.Stack;
+
+public class Stack_Use {
+
+    public static void main(String[] args) throws StackFullException, StackEmptyException {
+        StackUsingArray stack = new StackUsingArray(100);
+
+        int[] arr ={5,6,7,1,9};
+
+        for (int j : arr) {
+            stack.push(j);
+        }
+//        for(int i=0; i<arr.length;i++){
+//            stack.push(arr[i]);
+//        }
+
+        while(!stack.isEmpty()){
+            System.out.println(stack.pop());
+        }
+
+
+
+//        stack.push(10);
+//        System.out.println(stack.top());
+//        stack.pop();
+//        stack.size();
+//        System.out.println(stack.isEmpty());
+//        stack.pop();
+
+    }
+}
