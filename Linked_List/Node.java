@@ -2,9 +2,9 @@ package com.Linked_List;
 
 public class Node<T> {
 
-    T data;
-    Node <T>next;
-    Node(T data){
+    public  T data;
+    public Node <T>next;
+    public Node(T data){
         this.data=data;
         next=null;
     }

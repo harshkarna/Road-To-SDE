@@ -6,7 +6,7 @@ public class StackUsingArray {
     private int topIndex; //Index of the topmost element of the stack
 
     public StackUsingArray(){
-        data=new int[10];
+        data=new int[2];
         topIndex=-1;
     }
 
@@ -59,8 +59,12 @@ public class StackUsingArray {
     }
 
     private void doubleCapacity() {
+        System.out.println("Double capacity");
         int temp[]=data;
         data=new int[2*temp.length];
+        for(int i=0;i< temp.length;i++){
+            data[i]=temp[i];
+        }
     }
 
     //O(1)
