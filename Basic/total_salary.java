@@ -49,7 +49,7 @@ public class total_salary {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        double  basic_salary = sc.nextInt();
+        int basic_salary = sc.nextInt();
         char grade =sc.next().charAt(0);  ///Doubt - need to print in same line
 
         double hra = 0.2 *basic_salary;

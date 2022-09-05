@@ -130,7 +130,6 @@ public class Merge_2_sorted_LL {
     }
 
 
-
     public static void main(String[] args) {
         Node <Integer> head_1=takeInput();
         Node <Integer> head_2=takeInput();

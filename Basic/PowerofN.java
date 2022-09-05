@@ -20,7 +20,7 @@
 //        Sample Output 2 :
 //        32
 //
-//
+
 
 package com.Basic;
 
@@ -32,11 +32,11 @@ public class PowerofN {
         Scanner sc=new Scanner(System.in);
         int x=sc.nextInt();
         int n=sc.nextInt();
-        int i=1;
+        int i=0;
         int val=1;
 
 
-        while(i<=n) {
+        while(i<n) {
             val=val*x;
             i++;
         }

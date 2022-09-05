@@ -35,7 +35,7 @@
 //        Sample Output 2:
 //        4
 //        10
-//
+
 
 package com.Array;
 

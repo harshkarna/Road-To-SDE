@@ -117,7 +117,7 @@ public class kReverse {
 
         public static void main(String[] args) {
             Node <Integer> head=takeInputOptimised();
-            head=kReverse(head, 4);
+            head=kReverse(head, 10);
             print(head);
 
         }

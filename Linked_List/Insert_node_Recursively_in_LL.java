@@ -26,7 +26,7 @@ public class Insert_node_Recursively_in_LL {
 
     public static Node <Integer> insert_recursively(Node <Integer> head, int  data, int index){
         if(head==null && index > 0){
-            return head;
+            return null; //return head
         }
         //Base cas
         if(index==0){
@@ -47,7 +47,7 @@ public class Insert_node_Recursively_in_LL {
 
     public static void main(String[] args) {
         Node <Integer> head=createLinkedList();
-        head=insert_recursively(head,9,2);
+        head=insert_recursively(head,9,8);
         print_recursive(head);
 
 

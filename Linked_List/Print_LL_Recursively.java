@@ -17,6 +17,7 @@ public class Print_LL_Recursively {
 
 
     public static void print_recursive(Node <Integer> head){
+        //Base case
         if(head==null){
             return;
         }

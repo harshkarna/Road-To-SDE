@@ -32,7 +32,7 @@
 //        Sample Output 2:
 //        15
 //        60
-//
+
 
 
 package com.Array;

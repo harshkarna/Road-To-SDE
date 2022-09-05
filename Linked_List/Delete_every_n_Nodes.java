@@ -94,10 +94,11 @@ public class Delete_every_n_Nodes {
 
         Node <Integer> cn1=head;
         Node <Integer> cn2=head;
-        int cp1=1;
-        int cp2=0;
+
 
         while(cn2!=null ){
+            int cp1=1;
+            int cp2=0;
             while(cp1<m && cn2 !=null){
                 cn1=cn1.next;
                 cn2=cn2.next;
@@ -111,8 +112,6 @@ public class Delete_every_n_Nodes {
             cn1.next=cn2.next;
             cn2=cn2.next;
             cn1=cn2;
-            cp1=1;
-            cp2=0;
 
         }
         return head;

@@ -1,12 +1,13 @@
 package com.Linked_List;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Linked_List_Collections {
 
     public static void main(String[] args) {
 
-        LinkedList <Integer> list=new LinkedList<>();
+        LinkedList<Integer> list=new LinkedList<>();
         list.add(10);
         list.add(20);
         list.add(1,100);

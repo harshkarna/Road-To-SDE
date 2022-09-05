@@ -5,7 +5,7 @@ public class SwapAlternate2 {
 
     public static int[] swapalternate(int arr[]){
          int temp=0;
-         for(int i=0;i< arr.length;i=i+2){
+         for(int i=0;i< arr.length-1;i=i+2){
              temp=arr[i];
              arr[i]=arr[i+1];
              arr[i+1]=temp;
@@ -15,7 +15,7 @@ public class SwapAlternate2 {
 
 
     public static void main(String[] args) {
-        int arr[] ={9,3,12,6,4,32,};
+        int arr[] ={9,3,12,6,4,32,7};
         int arr1[]=swapalternate(arr);
 
         //display of array

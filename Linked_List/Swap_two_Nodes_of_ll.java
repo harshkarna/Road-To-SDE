@@ -86,47 +86,21 @@ public class Swap_two_Nodes_of_ll {
         System.out.println();
     }
 
-
     public static Node <Integer> swap_i_j(Node <Integer> head, int i, int j){
+
         Node <Integer> cn1=head;
         Node <Integer> cn2=head;
-        int p1=0;
-        int p2=0;
-        while(p1<i-1){
-            cn1=cn1.next;
-            p1++;
-        }
-        while(p2<j-1){
-            cn2=cn2.next;
-            p2++;
-        }
-        Node <Integer> temp1=cn1.next;
-        Node <Integer> temp2=cn2.next;
+        Node <Integer> prev1=head;
+        Node <Integer> prev2=head;
+        Node <Integer> rest=null;
 
-        temp2.next=cn1.next.next;
-        cn1.next=temp2;
 
-        temp1.next=cn2.next.next;
-        cn2.next=temp1;
-
-        return head;
-
-    }
-
-    public static Node <Integer> swap_i_j_1(Node <Integer> head, int i, int j){
+        //if i  or j is 0 )
         if(i==0 || j==0){
-            Node <Integer> cn1=head;
-            Node <Integer> cn2=head;
-            Node <Integer> prev2=head;
-            Node <Integer> rest=null;
-
-            int p2=0;
-            while(p2<j){
-                if(p2<j-1){
-                    prev2=prev2.next;
-                }
+            while(j>0){
+                prev2=cn2;
                 cn2=cn2.next;
-                p2++;
+                j--;
             }
 
             rest=cn2.next;
@@ -135,43 +109,51 @@ public class Swap_two_Nodes_of_ll {
             cn1.next=rest;
 
             return cn2;
-
         }
-        Node <Integer> cn1=head;
-        Node <Integer> cn2=head;
-        Node <Integer> prev1=head;
-        Node <Integer> prev2=head;
-        Node <Integer> rest=null;
-        int p1=0;
-        int p2=0;
-        while(p1<i){
-            if(p1<i-1){
-                prev1=prev1.next;
+
+        //if i and j are adjacent
+        else if(j - i == 1 ){
+
+            cn2=head.next;
+            while(i>0){
+                prev1=cn1;
+                cn1=cn1.next;
+                cn2=cn2.next;
+                i--;
             }
-            cn1=cn1.next;
-            p1++;
+            rest=cn2.next;
+            prev1.next=cn2;
+            cn2.next=cn1;
+            cn1.next=rest;
+            return head;
         }
-        while(p2<j){
-            if(p2<j-1){
-                prev2=prev2.next;
+        else{
+            //if (i and j are min 1 distance apart and both !=0)
+            while(i>0){
+                prev1=cn1;
+                cn1=cn1.next;
+                i--;
             }
-            cn2=cn2.next;
-            p2++;
+            while(j>0){
+                prev2=cn2;
+                cn2=cn2.next;
+                j--;
+            }
+
+            rest=cn2.next;
+            prev1.next=cn2;
+            cn2.next=cn1.next;
+            prev2.next=cn1;
+            cn1.next=rest;
+
+            return head;
+
         }
-
-        rest=cn2.next;
-        prev1.next=cn2;
-        cn2.next=cn1.next;
-        prev2.next=cn1;
-        cn1.next=rest;
-
-        return head;
 
     }
-
     public static void main(String[] args) {
          Node <Integer> head=takeInputOptimised();
-         head=swap_i_j_1(head,0,5);
+         head=swap_i_j(head,2,4);
          print(head);
 
     }
