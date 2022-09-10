@@ -46,19 +46,26 @@ public class Check_Redundant_Brackets {
 
         for(int i=0; i<exp.length();i++){
 
+            //if its opening bracket or some useful info operator
             if(exp.charAt(i)!=')'){
                 stack.push(exp.charAt(i));
             }
             else {
+                //So once you encounter a closing bracket ,trace the stack till yoi get opening bracket
+                //and count the useful information between and pop those simultaneously till opening bracket
                 while(stack.peek()!='('){
                     stack.pop();
                     count++;
                 }
+                //If the count is more than 0 then pop the opening bracket
+                //and set count and move to next i.
                 if(count > 0){
                     count =0;
                     stack.pop();
                     continue;
                 }
+                //if you get count =0, that means this is redundant pair ,
+                //So return true at this point of time
                 else if (count==0) {
                     return true ;
                 }
@@ -69,7 +76,7 @@ public class Check_Redundant_Brackets {
 
     public static void main(String[] args) {
 
-        String exp="(((a+b)+c))";
+        String exp="((a+b))";
         boolean answer=checkRedundantBrackets(exp);
         System.out.println(answer);
 

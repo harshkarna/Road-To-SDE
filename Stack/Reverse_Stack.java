@@ -46,7 +46,7 @@ public class Reverse_Stack {
         if(s1.size()<=1){
             return;
         }
-        int lastElement=s1.pop();
+        int topElement=s1.pop();
 
         reverseStack(s1,helper);
 
@@ -55,9 +55,9 @@ public class Reverse_Stack {
             helper.push(top);
         }
 
-        s1.push(lastElement);
+        s1.push(topElement);
 
-        while(!helper.isEmpty()){
+        while(!helper.isEmpty()) {
             int top=helper.pop();
             s1.push(top);
         }
@@ -78,7 +78,7 @@ public class Reverse_Stack {
 
         //To print Stack
         while(!stack.isEmpty()){
-            System.out.println(stack.pop());
+            System.out.print(stack.pop()+" ");
         }
 
 

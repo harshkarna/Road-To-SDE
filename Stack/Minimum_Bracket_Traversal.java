@@ -33,10 +33,10 @@
 
 package com.Stack;
 
-import javax.swing.*;
 import java.util.Stack;
 
 public class Minimum_Bracket_Traversal {
+
 
     public static int MinBracketReversal(String exp){
         Stack <Character> stack =new Stack<>();
@@ -78,7 +78,7 @@ public class Minimum_Bracket_Traversal {
 
     public static void main(String[] args) {
 
-        String exp="{{}}}}{{";
+        String exp = "}}}{{{";
         System.out.println(MinBracketReversal(exp));
 
 

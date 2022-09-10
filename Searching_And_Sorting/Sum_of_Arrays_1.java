@@ -31,7 +31,7 @@ public class Sum_of_Arrays_1 {
         }
         //   if j is greater than length
 
-        while(i>=0){
+        while(j>=0){
             int sum= arr2[j]+carry ;
             carry=sum/10;
             int last_digit=sum%10;
@@ -51,8 +51,8 @@ public class Sum_of_Arrays_1 {
 
 
     public static void main(String[] args) {
-        int arr1[]={4,1,2,1};
-        int arr2[]={7,4,1,2};
+        int arr1[]={9,2,3};
+        int arr2[]={5,8,9};
         sum(arr1,arr2);
 
     }

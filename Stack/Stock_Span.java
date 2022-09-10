@@ -49,16 +49,23 @@ public class Stock_Span {
             int n= price.length;
             int[] output = new int[n];
 
+            //So we now in put put span array, first span will be zero and we can push
+            //First element in span array
             stack.push(0);
             output[0]=1;
 
+           //Starting the loop from 1
             for(int i=1;i<n;i++){
+                //First case if price of i > top of stack price
+                //then pop elements until its vice versa
                 while(!stack.isEmpty() && price[stack.peek()] < price[i]){
                     stack.pop();
                 }
                 if(stack.isEmpty()){
                     output[i]=i+1;
                 }
+                //2nd case, if top of stack price > a[i] . then just simple find the
+                //difference between indices and put in output array
                 else {
                     output[i]=i-stack.peek();
                 }
