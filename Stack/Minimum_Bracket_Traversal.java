@@ -70,7 +70,8 @@ public class Minimum_Bracket_Traversal {
             }
             else{
                 //when c1 is } and c2 { as,  {} case already handled
-                count=+2;
+//                count=count+2;
+                count+=2;
             }
         }
         return count;

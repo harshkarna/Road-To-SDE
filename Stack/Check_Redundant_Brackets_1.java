@@ -38,11 +38,12 @@ package com.Stack;
 
 import java.util.Stack;
 
-public class Check_Redundant_Brackets {
+public class Check_Redundant_Brackets_1 {
+
+    //Best Solution
 
     public static boolean checkRedundantBrackets(String exp){
         Stack<Character> stack=new Stack<>();
-        int count=-1;
 
         for(int i=0; i<exp.length();i++){
 
@@ -51,29 +52,24 @@ public class Check_Redundant_Brackets {
                 stack.push(exp.charAt(i));
             }
             else {
-                char store_pop = 0;
+                //Setting the flag
+                boolean isRedundant=true;
                 //So once you encounter a closing bracket ,trace the stack till yoi get opening bracket
-                //and count the useful information between and pop those simultaneously till opening bracket
+                //and check if some operator is in between them until opening bracket found
+                //if found then set flag as false
                 while(stack.peek()!='('){
-                    store_pop=stack.pop();
-                    count++;
+                   if(stack.peek()=='+' || stack.peek()=='-' || stack.peek()=='*' || stack.peek()=='/'){
+                       isRedundant=false;
+                   }
+                   //pop all things betwwen bracket
+                   stack.pop();
                 }
-                //If the count is more than 0 , means it holds some useful value then pop the opening bracket
-                //and set count and move to next i.
-                if(count ==0 && ( store_pop =='+' || store_pop=='-' || store_pop=='*' || store_pop=='/')){
-                    stack.pop();
-                    continue;
+                //Now if nothing operator is found this flag will be true , hence redundant
+                if(isRedundant==true){
+                    return true;
                 }
-                if(count > 0){
-                    count =-1;
-                    stack.pop();
-                    continue;
-                }
-                //if you get count =0, that means this is redundant pair ,
-                //So return true at this point of time
-                else if (count ==0) {
-                    return true ;
-                }
+                //This pop is for opening opening bracket
+                stack.pop();
             }
         }
         return false;
