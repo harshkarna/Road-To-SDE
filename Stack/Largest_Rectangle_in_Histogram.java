@@ -79,7 +79,7 @@ public class Largest_Rectangle_in_Histogram {
             }
             int b =next.get(i)-prev.get(i)-1;
             int newArea=l*b;
-            area=Math.max(area,newArea);
+            area=Math.max(area,newArea); 
         }
         return area;
     }

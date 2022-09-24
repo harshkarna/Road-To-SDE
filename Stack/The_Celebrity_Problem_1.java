@@ -40,9 +40,9 @@ package com.Stack;
 
 import java.util.Stack;
 
-public class The_Celebrity_Problem {
+public class The_Celebrity_Problem_1 {
 
-    //Doubt whats the time complexity of this
+    //Slightly better approach abut almost same as previous
 
     private static boolean knows(int M[][],int a , int b, int n){
         if(M[a][b]==1){
@@ -86,38 +86,30 @@ public class The_Celebrity_Problem {
         //so verify it
 
         //check for row
-        boolean rowCheck=false;
         int zeroCount=0;
         for(int i=0;i<n;i++){
             if(M[potential_candidate][i]==0){
                 zeroCount++;
             }
         }
-
-        if(zeroCount ==n){
-            rowCheck=true;
+        if(zeroCount !=n){
+            return -1;
         }
 
         //check for col
-        boolean colCheck=false;
         int oneCount=0;
         for(int i=0;i<n;i++){
             if(M[i][potential_candidate]==1){
                 oneCount++;
             }
         }
-
         //here n-1 because of diagonal will be always 0
-        if(oneCount ==n-1){
-            colCheck=true;
-        }
-
-        if( rowCheck==true && colCheck ==true){
-            return potential_candidate;
-        }
-        else{
+        if(oneCount !=n-1){
             return -1;
         }
+
+        //if u reach here then this this the answer
+        return potential_candidate;
 
     }
 
