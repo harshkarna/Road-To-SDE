@@ -8,7 +8,7 @@ public class Factorial {
             return 1;
         }
         int smallcase=fact(n-1);
-        return n* smallcase;
+        return n * smallcase;
     }
 
 
