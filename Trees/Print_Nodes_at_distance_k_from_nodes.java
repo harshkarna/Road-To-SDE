@@ -1,47 +1,40 @@
-//Path Sum Root to Leaf
+//Print nodes at distance k from node
 //
-//        For a given Binary Tree of type integer and a number K,
-//        print out all root-to-leaf paths where the sum of all the node data along the path is equal to K.
+//        You are given a Binary Tree of type integer, a target node, and an integer value K.
+//        Print the data of all nodes that have a distance K from the target node. The order in which they would be printed will not matter.
 //        Example:
+//        For a given input tree(refer to the image below):
+//        1. Target Node: 5
+//        2. K = 2
 //        alt txt
 //
-//        If you see in the above-depicted picture of Binary Tree, we see that there are a total of two paths,
-//        starting from the root and ending at the leaves which sum up to a value of K = 13.
-//
-//        The paths are:
-//        a. 2 3 4 4
-//        b. 2 3 8
-//
-//        One thing to note here is, there is another path in the right sub-tree in reference to the root,
-//        which sums up to 13 but since it doesn't end at the leaf, we discard it.
-//        The path is: 2 9 2(not a leaf)
+//        Starting from the target node 5, the nodes at distance K are 7 4 and 1.
 //        Input Format:
 //        The first line of input will contain the node data, all separated by a single space.
 //        Since -1 is used as an indication whether the left or right node data exist for root, it will not be a part of the node data.
 //
-//        The second line of input contains an integer value K.
+//        The second line of input contains two integers separated by a single space, representing the value of the target node and K, respectively.
 //        Output Format:
-//        Lines equal to the total number of paths will be printed. All the node data in every path will be printed in a
-//        linear fashion taken in the order they appear from top to down bottom in the tree. A single space will separate them all.
-//        Constriants:
+//        All the node data at distance K from the target node will be printed on a new line.
+//
+//        The order in which the data is printed doesn't matter.
+//        Constraints:
 //        1 <= N <= 10^5
-//        0 <= K <= 10^8
 //        Where N is the total number of nodes in the binary tree.
 //
-//        Time Limit: 1 second
+//        Time Limit: 1 sec
 //        Sample Input 1:
-//        2 3 9 4 8 -1 2 4 -1 -1 -1 6 -1 -1 -1 -1 -1
-//        13
+//        5 6 10 2 3 -1 -1 -1 -1 -1 9 -1 -1
+//        3 1
 //        Sample Output 1:
-//        2 3 4 4
-//        2 3 8
+//        9
+//        6
 //        Sample Input 2:
-//        5 6 7 2 3 -1 1 -1 -1 -1 9 -1 -1 -1 -1
-//        13
+//        1 2 3 4 5 6 7 -1 -1 -1 -1 -1 -1 -1 -1
+//        3 3
 //        Sample Output 2:
-//        5 6 2
-//        5 7 1
-//
+//        4
+//        5
 
 package com.Trees;
 
@@ -49,7 +42,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Path_Sum_To_Leaf {
+public class Print_Nodes_at_distance_k_from_nodes {
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
@@ -83,25 +76,24 @@ public class Path_Sum_To_Leaf {
         }
         return root;
     }
-    public  static void  path_sum_to_leaf(BinaryTreeNode<Integer> root,int k ,String str){
+    public static void print_nodes_at_k(BinaryTreeNode<Integer> root,int target, int k){
         if(root==null){
             return;
         }
-        str=str+" "+root.data;
-        if(root.left==null && root.right==null){
-            if(root.data==k){
-                System.out.println(str);
-            }
+        if(k==0){
+            System.out.println(root.data);
         }
-        path_sum_to_leaf(root.left,k-root.data,str);
-        path_sum_to_leaf(root.right,k-root.data,str);
+        if(root.data==target){
+            print_nodes_at_k(root.left,target,k-1);
+            print_nodes_at_k(root.right,target,k-1);
+        }
 
     }
 
 
     public static void main(String[] args) {
+
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        path_sum_to_leaf(root,8,"");
 
 
 
