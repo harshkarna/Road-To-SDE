@@ -30,8 +30,11 @@
 //        5
 package com.Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 //Intuition :
+//Diameter - longest path between 2 leaf/ending nodes
 //Here we have 3 options to calculate height of the tree
 //1.leftheight+ rightheight
 //But in some cases largest distance can be on either side of the root as
@@ -39,60 +42,117 @@ import java.util.Scanner;
 //so we will ask recursion to do same step whatever we are doing at root
 //and then compare and whatever max of 3 , will be the answer
 
+
 public class Diameter_of_Tree {
-    public static int height_of_tree(BinaryTreeNode<Integer> root){
-        if(root==null){
+    public static int height_of_tree(BinaryTreeNode<Integer> root) {
+        if (root == null) {
             return 0;
         }
-        int left=height_of_tree(root.left);
-        int right=height_of_tree(root.right);
-        return 1 + Math.max(left,right);
+        int left = height_of_tree(root.left);
+        int right = height_of_tree(root.right);
+        return 1 + Math.max(left, right);
     }
-    public static BinaryTreeNode<Integer> treeInputBetter(boolean isRoot,int parentData,boolean isLeft){
-        if(isRoot){
-            System.out.println("Enter root data");
-        }
-        else {
-            if(isLeft){
-                System.out.println("Enter left child of " + parentData);
-            }
-            else {
-                System.out.println("Enter right child of " + parentData);
-            }
-        }
+
+    public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
-        int rootData=sc.nextInt();
-        if(rootData==-1){
+        System.out.println("Enter Root data ");
+        int rootdata= sc.nextInt();
+        //This is for if main root is null
+        if(rootdata == -1){
             return null;
         }
-        BinaryTreeNode<Integer> root =new BinaryTreeNode<>(rootData);
-        BinaryTreeNode<Integer> leftChild =treeInputBetter(false,rootData,true);
-        BinaryTreeNode<Integer> rightChild =treeInputBetter(false ,rootData,false);
-        root.left=leftChild;
-        root.right=rightChild;
-        return root;
 
-    }
+        BinaryTreeNode<Integer> root=new BinaryTreeNode<>(rootdata);
+        Queue<BinaryTreeNode<Integer>> pendingChildren=new LinkedList<>();
+        pendingChildren.add(root);
 
-    public static int diameter_of_tree(BinaryTreeNode<Integer> root){
-        if(root==null){
-            return 0 ;
+        while(!pendingChildren.isEmpty()){
+            BinaryTreeNode<Integer> front= pendingChildren.poll();
+
+            System.out.println("Enter left Child of " + front.data);
+            int left= sc.nextInt();
+            if(left!=-1){
+                BinaryTreeNode<Integer> leftChild=new BinaryTreeNode<Integer>(left);
+                front.left=leftChild;
+                pendingChildren.add(leftChild);
+            }
+            System.out.println("Enter Right Child of " + front.data);
+            int right= sc.nextInt();
+            if(right!=-1){
+                BinaryTreeNode<Integer> rightChild=new BinaryTreeNode<Integer>(right);
+                front.right=rightChild;
+                pendingChildren.add(rightChild);
+            }
         }
-        int leftHeight=height_of_tree(root.left);
-        int rightHeight=height_of_tree(root.right);
-        int diameter_1=leftHeight+rightHeight;
+        return root;
+    }
 
-        int left=diameter_of_tree(root.left);
-        int right=diameter_of_tree(root.right);
 
-        return Math.max(Math.max(left,right),diameter_1);
+
+    //1st Approach
+    //Time Complexity is coming O(n^2), can we improve to 0(n)
+    public static int diameter_of_tree(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = height_of_tree(root.left);
+        int rightHeight = height_of_tree(root.right);
+        int diameter_1 = 1 + leftHeight + rightHeight;
+
+        int left = diameter_of_tree(root.left);
+        int right = diameter_of_tree(root.right);
+
+        return Math.max(Math.max(left, right), diameter_1);
 
     }
+
+
+    //2nd Approach
+    private static class Pair<T, T1> {
+        int diameter;
+        int height;
+
+        public Pair(int diameter, int height) {
+            this.diameter = diameter;
+            this.height = height;
+        }
+    }
+    //Time complexity is O(n)
+
+    public static Pair diameterHelper(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return new Pair(0, 0);
+        }
+
+        Pair leftPair = diameterHelper(root.left);
+        Pair rightPair = diameterHelper(root.right);
+
+        int leftHeight = leftPair.height;
+        int rightHeight = rightPair.height;
+        int diamter_option_via_root = 1 + leftHeight + rightHeight;
+
+        int leftoption = leftPair.diameter;
+        int rightoption = rightPair.diameter;
+
+        return new Pair(Math.max(diamter_option_via_root, Math.max(leftoption, rightoption)),Math.max(leftHeight,rightHeight)+1);
+
+    }
+
+    public static int diameter_of_tree_Optimised(BinaryTreeNode<Integer> root) {
+        Pair pair = diameterHelper(root);
+        return pair.diameter;
+    }
+
 
     public static void main(String[] args) {
-        BinaryTreeNode<Integer> root=treeInputBetter(true,0,false);
-        System.out.println(diameter_of_tree(root));
+        BinaryTreeNode<Integer> root =takeInputLevelwise();
+//        System.out.println(diameter_of_tree(root));
+        System.out.println(diameter_of_tree_Optimised(root));
 
 
     }
+
+
 }
+
+

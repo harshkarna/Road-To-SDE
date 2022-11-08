@@ -107,9 +107,43 @@ public class Level_Order_Traversal {
         }
     }
 
+    public static void level_order_traversal_better(BinaryTreeNode<Integer> root){
+        if(root==null){
+            return;
+        }
+        Queue<BinaryTreeNode<Integer>> pendingChildren=new LinkedList<>();
+        pendingChildren.add(root);
+        pendingChildren.add(null);
+        //we are suing null here taaki hame pata chale ki ek level kab end ho raha hai , and we need to print new line there
+        while(!pendingChildren.isEmpty()){
+
+            BinaryTreeNode<Integer> front=pendingChildren.poll();
+
+            if(front==null){
+                //purana level complete ho chuka hai
+                System.out.println();
+                if(!pendingChildren.isEmpty()){
+                    //its means queue still have children , so for that level we need to insert null
+                   pendingChildren.add(null);
+                   //when ever we pop null , we need to insert null , condition is queue should not empty at that point
+                }
+            }
+            else{
+                System.out.print(front.data +" ");
+                if(front.left!=null){
+                    pendingChildren.add(front.left);
+                }
+                if(front.right!=null){
+                    pendingChildren.add(front.right);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        level_order_traversal(root);
+        // 1 2 3 4 5 6 7 -1 -1 -1 -1 -1 -1 -1 -1
+        level_order_traversal_better(root);
 
 
     }

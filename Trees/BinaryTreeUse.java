@@ -19,8 +19,10 @@ public class BinaryTreeUse {
         return root;
 
     }
+
     public static BinaryTreeNode<Integer> treeInputBetter(boolean isRoot,int parentData,boolean isLeft){
         if(isRoot){
+            //this will be executed once
             System.out.println("Enter root data");
         }
         else {
@@ -51,9 +53,11 @@ public class BinaryTreeUse {
             return;
         }
         System.out.println(root.data);
+
         printTree(root.left);
         printTree(root.right);
     }
+
     public static void printTreeDetailed(BinaryTreeNode<Integer> root){
         //Take care of the base case
         if(root==null){

@@ -30,17 +30,13 @@ public class No_of_leaf_nodes {
 
     }
     public static int no_of_leaf_nodes(BinaryTreeNode<Integer> root){
-        boolean flag=false;
         if(root==null){
             return 0;
         }
-        if(root.left==null && root.right==null){
-            flag=true;
-        }
-
         int left=no_of_leaf_nodes(root.left);
         int right=no_of_leaf_nodes(root.right);
-        if(flag){
+
+        if(root.left==null && root.right==null){
             return 1+left+right;
         }
         else{
@@ -49,13 +45,14 @@ public class No_of_leaf_nodes {
     }
 
     public static int no_of_leaf_nodes_better(BinaryTreeNode<Integer> root){
-        boolean flag=false;
         if(root==null){
             return 0;
         }
+
         if(root.left==null && root.right==null){
             return 1;
         }
+
         return no_of_leaf_nodes(root.left)+no_of_leaf_nodes_better(root.right);
 
     }

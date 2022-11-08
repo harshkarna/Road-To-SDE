@@ -4,33 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class takeInput_Levelwise {
-
-    public static void printTreeDetailed(BinaryTreeNode<Integer> root){
-        //Take care of the base case
-        if(root==null){
-            return;
-        }
-        System.out.print(root.data + ":");
-
-        if(root.left!=null){
-            System.out.print("L" + root.left.data + ",");
-        }
-        if(root.right!=null){
-            System.out.print("R" + root.right.data);
-        }
-
-        System.out.println();
-
-        printTreeDetailed(root.left);
-        printTreeDetailed(root.right);
-    }
+public class Print_in_all_types_of_Traversal {
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter Root data ");
         int rootdata= sc.nextInt();
-        //This is for if main root is null
         if(rootdata == -1){
             return null;
         }
@@ -60,8 +39,49 @@ public class takeInput_Levelwise {
         return root;
     }
 
+    public static void inorder(BinaryTreeNode<Integer> root){
+        if(root==null){
+            return;
+        }
+        //Inorder
+        //First Left , then root , then right
+        inorder(root.left);
+        System.out.print(root.data +" ");
+        inorder(root.right);
+    }
+
+    public static void preorder(BinaryTreeNode<Integer> root){
+        if(root==null){
+            return;
+        }
+        //First Root , then left , then right
+        System.out.print(root.data +" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    public static void postorder(BinaryTreeNode<Integer> root){
+        if(root==null){
+            return;
+        }
+        //First left , then right , then root
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data +" ");
+    }
+
+
     public static void main(String[] args) {
+
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        printTreeDetailed(root);
+        System.out.print("Inorder -> ");
+        inorder(root);
+        System.out.println();
+        System.out.print("Preorder -> ");
+        preorder(root);
+        System.out.println();
+        System.out.print("Postorder -> ");
+        postorder(root);
+
     }
 }

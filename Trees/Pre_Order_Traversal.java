@@ -56,6 +56,7 @@ public class Pre_Order_Traversal {
         if(root==null){
             return;
         }
+        //This is Pre Order traversal
         System.out.println(root.data);
         printTree(root.left);
         printTree(root.right);

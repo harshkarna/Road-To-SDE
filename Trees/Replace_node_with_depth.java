@@ -32,33 +32,42 @@
 
 package com.Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Replace_node_with_depth {
-    public static BinaryTreeNode<Integer> treeInputBetter(boolean isRoot,int parentData,boolean isLeft){
-        if(isRoot){
-            System.out.println("Enter root data");
-        }
-        else {
-            if(isLeft){
-                System.out.println("Enter left child of " + parentData);
-            }
-            else {
-                System.out.println("Enter right child of " + parentData);
-            }
-        }
+    public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
-        int rootData=sc.nextInt();
-        if(rootData==-1){
+        System.out.println("Enter Root data ");
+        int rootdata= sc.nextInt();
+        if(rootdata == -1){
             return null;
         }
-        BinaryTreeNode<Integer> root =new BinaryTreeNode<>(rootData);
-        BinaryTreeNode<Integer> leftChild =treeInputBetter(false,rootData,true);
-        BinaryTreeNode<Integer> rightChild =treeInputBetter(false ,rootData,false);
-        root.left=leftChild;
-        root.right=rightChild;
-        return root;
 
+        BinaryTreeNode<Integer> root=new BinaryTreeNode<>(rootdata);
+        Queue<BinaryTreeNode<Integer>> pendingChildren=new LinkedList<>();
+        pendingChildren.add(root);
+
+        while(!pendingChildren.isEmpty()){
+            BinaryTreeNode<Integer> front= pendingChildren.poll();
+
+            System.out.println("Enter left Child of " + front.data);
+            int left= sc.nextInt();
+            if(left!=-1){
+                BinaryTreeNode<Integer> leftChild=new BinaryTreeNode<Integer>(left);
+                front.left=leftChild;
+                pendingChildren.add(leftChild);
+            }
+            System.out.println("Enter Right Child of " + front.data);
+            int right= sc.nextInt();
+            if(right!=-1){
+                BinaryTreeNode<Integer> rightChild=new BinaryTreeNode<Integer>(right);
+                front.right=rightChild;
+                pendingChildren.add(rightChild);
+            }
+        }
+        return root;
     }
     public static void printTreeDetailed(BinaryTreeNode<Integer> root){
         //Take care of the base case
@@ -86,11 +95,11 @@ public class Replace_node_with_depth {
         root.data=level;
         replace_node_with_depth(root.left,level+1);
         replace_node_with_depth(root.right, level+1);
-        return root;
+        return root ;
     }
 
     public static void main(String[] args) {
-        BinaryTreeNode<Integer> root=treeInputBetter(true,0,false);
+        BinaryTreeNode<Integer> root=takeInputLevelwise();
         printTreeDetailed(replace_node_with_depth(root, 0));
 
     }

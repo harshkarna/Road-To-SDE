@@ -34,6 +34,8 @@ package com.Trees;
 
 import java.util.Scanner;
 
+//Height of Tree - longest distnace betwen root node and leaf of a tree
+
 public class Find_height_of_Tree {
     public static BinaryTreeNode<Integer> treeInputBetter(boolean isRoot,int parentData,boolean isLeft){
         if(isRoot){
@@ -62,6 +64,7 @@ public class Find_height_of_Tree {
     }
 
     public static int height_of_tree(BinaryTreeNode<Integer> root){
+        //Base Case
         if(root==null){
             return 0;
         }

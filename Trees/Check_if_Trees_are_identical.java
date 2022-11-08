@@ -4,27 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class takeInput_Levelwise {
-
-    public static void printTreeDetailed(BinaryTreeNode<Integer> root){
-        //Take care of the base case
-        if(root==null){
-            return;
-        }
-        System.out.print(root.data + ":");
-
-        if(root.left!=null){
-            System.out.print("L" + root.left.data + ",");
-        }
-        if(root.right!=null){
-            System.out.print("R" + root.right.data);
-        }
-
-        System.out.println();
-
-        printTreeDetailed(root.left);
-        printTreeDetailed(root.right);
-    }
+public class Check_if_Trees_are_identical {
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
@@ -60,8 +40,34 @@ public class takeInput_Levelwise {
         return root;
     }
 
+    public static boolean isIdentical(BinaryTreeNode<Integer> root1,BinaryTreeNode<Integer> root2){
+        //Tc=O(N)
+        // base case
+        if(root1 == null && root2 == null) {
+            return true;
+        }
+
+        if(root1 == null && root2 != null) {
+            return false;
+        }
+
+        if(root1 != null && root2 == null) {
+            return false;
+        }
+
+        boolean check_current= root1.data.equals(root2.data);
+
+        boolean left = isIdentical(root1.left, root2.left);
+        boolean right = isIdentical(root1.right, root2.right);
+
+        return (check_current && left && right);
+
+    }
+
     public static void main(String[] args) {
-        BinaryTreeNode<Integer> root=takeInputLevelwise();
-        printTreeDetailed(root);
+        BinaryTreeNode<Integer> root1=takeInputLevelwise();
+        BinaryTreeNode<Integer> root2=takeInputLevelwise();
+        System.out.println(isIdentical(root1,root2));
+
     }
 }
