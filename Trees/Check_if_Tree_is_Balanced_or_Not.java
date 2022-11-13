@@ -91,15 +91,17 @@ public class Check_if_Tree_is_Balanced_or_Not {
         Pair left=  isBalancedHelper(root.left);
         Pair right = isBalancedHelper(root.right);
 
+        boolean isCurrentBalanced=true;
         if( Math.abs(left.height-right.height) > 1 ){
-            return new Pair(false,0);
+//            return new Pair(false,0);
+            isCurrentBalanced=false;
         }
 
         boolean isLeftBalanced=left.isBalanced;
         boolean isRightBalanced=right.isBalanced;
 
 
-        return new Pair((isLeftBalanced && isRightBalanced),Math.max(left.height,right.height)+1);
+        return new Pair(( isLeftBalanced && isRightBalanced &&  isCurrentBalanced) ,Math.max(left.height,right.height)+1);
 
     }
 

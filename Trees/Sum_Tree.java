@@ -61,7 +61,6 @@ public class Sum_Tree {
         }
     }
 
-
     public static Pair isSumHelper(BinaryTreeNode<Integer> root) {
         //Base case
         if (root == null) {

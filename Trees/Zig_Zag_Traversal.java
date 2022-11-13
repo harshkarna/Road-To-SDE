@@ -78,8 +78,12 @@ public class Zig_Zag_Traversal {
             left_to_right = !left_to_right;
 
             //Copy karo main ans mein ek level ka answer
-            for (int k = 0; k < temp.length; k++) {
-                ans.add(temp[k]);
+//            for (int k = 0; k < temp.length; k++) {
+//                ans.add(temp[k]);
+//            }
+//
+            for(int i : temp){
+                ans.add(i);
             }
 
         }
