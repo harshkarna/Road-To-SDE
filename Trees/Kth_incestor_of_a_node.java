@@ -80,11 +80,57 @@ public class Kth_incestor_of_a_node {
 //        return ans;
 //
 //    }
+    static int k;
+    public  static BinaryTreeNode<Integer> solve(BinaryTreeNode<Integer> root,int k , int node){
+        //base case
+        if(root==null){
+            return null;
+        }
+        if(root.data==node){
+            return root;
+        }
+        BinaryTreeNode<Integer> leftAns=solve(root.left,k, node);
+        BinaryTreeNode<Integer> rightAns=solve(root.right,k, node);
+
+        //jab wapas aana
+        if(leftAns!=null && rightAns==null){
+            k--;
+            if(k<=0){
+                k=Integer.MAX_VALUE;
+                //answer lock
+                return root;
+            }
+            return leftAns;
+        }
+
+        if(leftAns==null && rightAns!=null){
+            k--;
+            if(k<=0){
+                k=Integer.MAX_VALUE;
+                //answer lock
+                return root;
+            }
+            return rightAns;
+        }
+        return null;
+
+    }
+
+    public static int  KthAncestor(BinaryTreeNode<Integer> root,int k , int node){
+        BinaryTreeNode<Integer> ans=solve(root, k , node);
+        if(ans==null){
+            return -1;
+        }
+        else{
+            return ans.data;
+        }
+    }
 
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-//        System.out.println(kthAncestor(root,2,4));
+        k=2;
+        System.out.println(KthAncestor(root,k,4));
 
 
     }
