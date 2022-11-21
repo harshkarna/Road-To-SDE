@@ -60,6 +60,7 @@ public class Loop_Detection {
         if(head==null){
             return false;
         }
+
         LinkedHashMap<Node <Integer>, Boolean> visited = new LinkedHashMap<>();
         Node <Integer> temp=head;
         //Cycle is present
