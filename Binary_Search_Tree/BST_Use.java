@@ -13,6 +13,10 @@ public class BST_Use {
         b.insert(8);
 
         b.printTree();
+        b.deleteData(7);
+        b.printTree();
+
+
 
     }
 }
