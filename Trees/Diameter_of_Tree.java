@@ -108,7 +108,7 @@ public class Diameter_of_Tree {
 
 
     //2nd Approach
-    private static class Pair<T, T1> {
+    private static class Pair {
         int diameter;
         int height;
 
@@ -129,12 +129,12 @@ public class Diameter_of_Tree {
 
         int leftHeight = leftPair.height;
         int rightHeight = rightPair.height;
-        int diamter_option_via_root = 1 + leftHeight + rightHeight;
+        int diameter_option_via_root = 1 + leftHeight + rightHeight;
 
         int leftoption = leftPair.diameter;
         int rightoption = rightPair.diameter;
 
-        return new Pair(Math.max(diamter_option_via_root, Math.max(leftoption, rightoption)),Math.max(leftHeight,rightHeight)+1);
+        return new Pair(Math.max(diameter_option_via_root, Math.max(leftoption, rightoption)),Math.max(leftHeight,rightHeight)+1);
 
     }
 

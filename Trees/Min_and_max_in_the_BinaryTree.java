@@ -26,6 +26,8 @@
 
 package com.Trees;
 
+import com.sun.org.apache.bcel.internal.generic.GETFIELD;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -63,43 +65,35 @@ public class Min_and_max_in_the_BinaryTree {
         }
         return root;
     }
-    public static void printTreeDetailed(BinaryTreeNode<Integer> root){
-        //Take care of the base case
-        if(root==null){
-            return;
-        }
-        System.out.print(root.data + ":");
 
-        if(root.left!=null){
-            System.out.print("L" + root.left.data + ",");
-        }
-        if(root.right!=null){
-            System.out.print("R" + root.right.data);
-        }
+    private static class getMinAndMax{
+        int min;
+        int max;
 
-        System.out.println();
-
-        printTreeDetailed(root.left);
-        printTreeDetailed(root.right);
+        public getMinAndMax(int min, int max) {
+            this.min = min;
+            this.max = max;
+        }
     }
 
-
-    public static int max_and_Min(BinaryTreeNode<Integer> root){
+    public static getMinAndMax max_and_Min(BinaryTreeNode<Integer> root){
         if(root==null){
-            return Integer.MIN_VALUE;
+            return new getMinAndMax(Integer.MAX_VALUE,Integer.MIN_VALUE);
         }
-        int rootData=root.data;
-        int leftMAx=max_and_Min(root.left);
-        int rightMax=max_and_Min(root.right);
+        getMinAndMax left=max_and_Min(root.left);
+        getMinAndMax right=max_and_Min(root.right);
 
-        return Math.max(rootData,Math.max(leftMAx,rightMax));
+
+        return new getMinAndMax(Math.min(root.data,Math.min(left.min,right.min)),Math.max(root.data, Math.max(left.max,right.max)));
 
     }
 
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        System.out.println((max_and_Min(root)));
+        System.out.println((max_and_Min(root).max));
+        System.out.println((max_and_Min(root).min));
+
 
     }
 }

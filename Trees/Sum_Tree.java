@@ -51,7 +51,7 @@ public class Sum_Tree {
         return root;
     }
     //TC=0(N) ,we can also solve this without pair but then tc will be O(N^2)
-    private static class Pair<T, T1> {
+    private static class Pair {
         boolean isSum;
         int sum;
 
@@ -81,6 +81,7 @@ public class Sum_Tree {
         boolean leftCheck=left.isSum;
         boolean rightCheck=right.isSum;
 
+        //here in returning think like you are returning full answer in respective with root
         return new Pair(leftCheck && rightCheck && current_node,root.data + left.sum+ right.sum);
 
     }

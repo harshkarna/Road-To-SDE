@@ -85,9 +85,14 @@ public class Path_Sum_To_Leaf {
     }
     public  static void  path_sum_to_leaf(BinaryTreeNode<Integer> root,int k ,String str){
         if(root==null){
+
             return;
         }
+
+        //in string we will store the path
         str=str+" "+root.data;
+        //when we encounter leaf node , will check if that leaf node value is equal to k ,
+        // as every recursive call , we are decreasing k by that node value
         if(root.left==null && root.right==null){
             if(root.data==k){
                 System.out.println(str);
@@ -101,7 +106,7 @@ public class Path_Sum_To_Leaf {
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        path_sum_to_leaf(root,8,"");
+        path_sum_to_leaf(root,13,"");
 
 
 

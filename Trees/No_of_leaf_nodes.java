@@ -37,7 +37,7 @@ public class No_of_leaf_nodes {
         int right=no_of_leaf_nodes(root.right);
 
         if(root.left==null && root.right==null){
-            return 1+left+right;
+            return 1;
         }
         else{
             return left+right;

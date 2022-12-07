@@ -59,7 +59,7 @@ public class Check_if_Tree_is_Balanced_or_Not {
         //hence Tc = O(N^2) , which can be improved
         int leftHeight=height_of_tree(root.left);
         int rightHeight=height_of_tree(root.right);
-        //Formula : To checl balance
+        //Formula : To check balance
         //Diff of left height and right height should =<1 for all nodes in tree
         if( Math.abs(leftHeight-rightHeight) > 1 ){
             return false ;
@@ -72,7 +72,7 @@ public class Check_if_Tree_is_Balanced_or_Not {
     }
 
     //2nd Approach
-    private static class Pair<T, T1> {
+    private static class Pair {
         boolean isBalanced;
         int height;
 
@@ -93,7 +93,6 @@ public class Check_if_Tree_is_Balanced_or_Not {
 
         boolean isCurrentBalanced=true;
         if( Math.abs(left.height-right.height) > 1 ){
-//            return new Pair(false,0);
             isCurrentBalanced=false;
         }
 

@@ -47,11 +47,8 @@ public class Check_if_Trees_are_identical {
             return true;
         }
 
-        if(root1 == null && root2 != null) {
-            return false;
-        }
-
-        if(root1 != null && root2 == null) {
+        //if either of them
+        if((root1 == null && root2 != null )||( root1 != null && root2 == null)) {
             return false;
         }
 

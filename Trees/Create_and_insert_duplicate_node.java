@@ -104,18 +104,23 @@ public class Create_and_insert_duplicate_node {
         }
     }
 
+
     public static void double_Tree(BinaryTreeNode<Integer> root){
         if(root==null){
             return;
         }
 
-        //Doubt in below line
+        //first create a copy of root
         BinaryTreeNode<Integer> new_Node=new BinaryTreeNode<>(root.data);
-        BinaryTreeNode<Integer> rootLeft=root.left;
+        //then store the original left in temp as now the left will change
+        BinaryTreeNode<Integer> temp_left=root.left;
+        //attach the copy of root to left of root
         root.left=new_Node;
-        new_Node.left=rootLeft;
+        // then attach the original left  to left of copy of root.
+        new_Node.left=temp_left;
 
-        double_Tree(rootLeft);
+       //now pass the left and right to recursion
+        double_Tree(temp_left);
         double_Tree(root.right);
 
     }
