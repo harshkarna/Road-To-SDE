@@ -78,7 +78,7 @@ public class Sum_of_nodes_on_longest_path_from_root_to_leaf {
 //     }
 
     //as we want to retain these 2 variables across
-    //and also there is no pass by reference in java so we are haveing these globally
+    //and also there is no pass by reference in java so we are having these globally
     static int maxSum=Integer.MIN_VALUE;
     static int maxLength=0;
 

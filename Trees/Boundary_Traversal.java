@@ -101,14 +101,14 @@ public class Boundary_Traversal {
         if(root.left==null && root.right==null){
             return;
         }
-        //Firt have recusrion call as we need to start from second last and come above in tree
+        //Firt have recusrion call as we need to start from second last and come above in tree towarsd root
         if(root.right!=null){
             traverseRight(root.right,ans);
         }
         else{
             traverseRight(root.left,ans);
         }
-        //jab waapas aao
+        //jab waapas aane lago last leaf node se
         ans.add(root.data);
     }
 

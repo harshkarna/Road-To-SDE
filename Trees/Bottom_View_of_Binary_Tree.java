@@ -39,7 +39,7 @@ public class Bottom_View_of_Binary_Tree {
     }
 
 
-    private static class Pair<T, T1> {
+    private static class Pair {
         int hd;
         BinaryTreeNode<Integer>  node;
 
@@ -63,7 +63,7 @@ public class Bottom_View_of_Binary_Tree {
         //Now lets start with the queue
         while(!pendingChildren.isEmpty()){
             //Poll the first in queue
-            Pair<Integer,BinaryTreeNode<Integer>> current=pendingChildren.poll();
+            Pair current=pendingChildren.poll();
             //First check if map contains current hd or not
             //just everytime add, or replace value for that particular key
             map.put(current.hd,current.node.data);

@@ -76,20 +76,19 @@ public class BST {
          if(root==null){
              return new BSTReturn(null,false);
          }
-         //2nd case if x is less than root data
+         //2nd case if x is greater than root data
         if(root.data < x){
             BSTReturn outputRight=deleteDataHelper(root.right,x);
             root.right=outputRight.root;
             outputRight.root=root;
             return outputRight;
         }
-        //3rd case if x greater than root data
+        //3rd case if x smaller than root data
         if(root.data > x){
             BSTReturn outputLeft=deleteDataHelper(root.left,x);
             root.left=outputLeft.root;
             outputLeft.root=root;
             return outputLeft;
-
         }
 
         //if root has no child

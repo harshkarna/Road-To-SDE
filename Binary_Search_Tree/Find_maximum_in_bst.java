@@ -1,11 +1,12 @@
-package com.Trees;
+package com.Binary_Search_Tree;
 
-import java.util.ArrayList;
+import com.Trees.BinaryTreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Left_View_of_Binary_Tree {
+public class Find_maximum_in_bst {
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
@@ -41,42 +42,24 @@ public class Left_View_of_Binary_Tree {
         return root;
     }
 
-    public static void leftViewhelper(BinaryTreeNode<Integer> root, int level, ArrayList<Integer> ans){
-        //base case
-        if(root==null){
-           return;
+
+    public static int maxValue(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return 0;
         }
-        //now do for the current node rest recursion will take care
-        //Now we need to figure out how the recursion will now one level has been passed
-        if(level == ans.size()){
-            //we entered into a new level
-            ans.add(root.data);
+        int maxValue = root.data;
+        while (root.right != null) {
+            maxValue = root.right.data;
+            root = root.right;
         }
-
-        leftViewhelper(root.left,level+1,ans);
-        leftViewhelper(root.right,level+1,ans);
-
-    }
-
-
-    public static ArrayList<Integer> leftView(BinaryTreeNode<Integer> root){
-        //we can solve this by level order traversal also , as we have seen in earlier cases for top view and bottom view ,
-        //and also we can use map / arraylist and solve by recursion
-        // but lets try to solve this tim eby recursion
-
-        int level=0;
-        ArrayList<Integer> ans=new ArrayList<>();
-        leftViewhelper(root, level,ans);
-        return ans;
-
+        return maxValue;
     }
 
 
     public static void main(String[] args) {
-        BinaryTreeNode<Integer> root=takeInputLevelwise();
-        ArrayList<Integer> ans=leftView(root);
-        System.out.println(ans);
 
+        BinaryTreeNode<Integer> root=takeInputLevelwise();
+        System.out.println(maxValue(root));
 
     }
 }

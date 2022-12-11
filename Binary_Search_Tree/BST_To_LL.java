@@ -150,7 +150,7 @@ public class BST_To_LL {
             headAndTail.head=newNode;
         }
         //checking if right part is null or not , if not null then attach its tail ka next to newNode
-        if(right.tail!=null){
+        if(right.head!=null){
             headAndTail.tail=right.tail;
         }
         else{

@@ -41,6 +41,8 @@ public class Zig_Zag_Traversal {
         return root;
     }
 
+
+
     public static ArrayList<Integer> zigZagTraversal(BinaryTreeNode<Integer> root){
 
         ArrayList <Integer> ans= new ArrayList<>();
@@ -55,14 +57,14 @@ public class Zig_Zag_Traversal {
 
             int size =pendingChildren.size();
 
-           //Taking temp  array to store each level answer
-            int temp[] = new int[size];
+           //Taking temp  array of size= pending children to store each level answer
+            int[] temp = new int[size];
 
             //Process each level
             for(int i=0;i<size;i++){
-                BinaryTreeNode<Integer> frontNode=pendingChildren.peek();
-                pendingChildren.poll();
+                BinaryTreeNode<Integer> frontNode=pendingChildren.poll();
 
+                //to decide the direction we want to store from start or last
                 int index=left_to_right ? i : size - i-1;
                 temp[index]= frontNode.data;
 
@@ -77,18 +79,11 @@ public class Zig_Zag_Traversal {
             //Direction Change
             left_to_right = !left_to_right;
 
-            //Copy karo main ans mein ek level ka answer
-//            for (int k = 0; k < temp.length; k++) {
-//                ans.add(temp[k]);
-//            }
-//
             for(int i : temp){
                 ans.add(i);
             }
-
         }
         return ans;
-
     }
 
 

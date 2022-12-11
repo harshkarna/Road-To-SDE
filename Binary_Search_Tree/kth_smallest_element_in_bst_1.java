@@ -1,11 +1,12 @@
-package com.Trees;
+package com.Binary_Search_Tree;
 
-import java.util.ArrayList;
+import com.Trees.BinaryTreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Left_View_of_Binary_Tree {
+public class kth_smallest_element_in_bst_1 {
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         Scanner sc=new Scanner(System.in);
@@ -41,42 +42,39 @@ public class Left_View_of_Binary_Tree {
         return root;
     }
 
-    public static void leftViewhelper(BinaryTreeNode<Integer> root, int level, ArrayList<Integer> ans){
+    // this can be one of the solutions ,we need to do inorder traversal
+    //but even if we are getting the answer still we are searching entire BST that hurts here
+
+    static  int count=0;
+    public static  int  KthSmallestElementHelper(BinaryTreeNode<Integer> root, int k){
         //base case
         if(root==null){
-           return;
+            return -1;
         }
-        //now do for the current node rest recursion will take care
-        //Now we need to figure out how the recursion will now one level has been passed
-        if(level == ans.size()){
-            //we entered into a new level
-            ans.add(root.data);
+        // search in left subtree
+        int left= KthSmallestElementHelper(root.left,k);
+        // if k'th smallest is found in left subtree, return it
+        if(left!=-1){
+            return left;
         }
 
-        leftViewhelper(root.left,level+1,ans);
-        leftViewhelper(root.right,level+1,ans);
+        // if current element is k'th smallest, return it
+        count++;
+        if(k==count){
+            return root.data;
+        }
+
+        return KthSmallestElementHelper(root.right,k);
 
     }
 
-
-    public static ArrayList<Integer> leftView(BinaryTreeNode<Integer> root){
-        //we can solve this by level order traversal also , as we have seen in earlier cases for top view and bottom view ,
-        //and also we can use map / arraylist and solve by recursion
-        // but lets try to solve this tim eby recursion
-
-        int level=0;
-        ArrayList<Integer> ans=new ArrayList<>();
-        leftViewhelper(root, level,ans);
-        return ans;
+    public static int KthSmallestElement(BinaryTreeNode<Integer> root, int k){
+       return KthSmallestElementHelper(root,k);
 
     }
-
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
-        ArrayList<Integer> ans=leftView(root);
-        System.out.println(ans);
-
-
+        System.out.println(KthSmallestElement(root,2));
     }
 }

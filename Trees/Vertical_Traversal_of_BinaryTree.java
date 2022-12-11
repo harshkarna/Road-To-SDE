@@ -5,7 +5,7 @@
 
 package com.Trees;
 
-import java.lang.reflect.Array;
+
 import java.util.*;
 
 public class Vertical_Traversal_of_BinaryTree {
@@ -44,7 +44,7 @@ public class Vertical_Traversal_of_BinaryTree {
         return root;
     }
 
-    private static class Pair<T, T1> {
+    private static class Pair {
         int hd;
         BinaryTreeNode<Integer>  node;
 
@@ -68,14 +68,14 @@ public class Vertical_Traversal_of_BinaryTree {
         //Now lets start with the queue
         while(!pendingChildren.isEmpty()){
             //Poll the first in queue
-            Pair<Integer,BinaryTreeNode<Integer>> current=pendingChildren.poll();
+            Pair current=pendingChildren.poll();
             //First check if map contains current hd or not
             if(map.containsKey(current.hd)){
                 //if map already contain key with hd , then just simply get that key , add nodes data in front of it , which is arraylist in our case
                 map.get(current.hd).add(current.node.data);
             }
             else{
-                //Now if u encounter the key - hd first time , then you need to create a temp arraylist for that particluar key
+                //Now if u encounter the key - hd first time , then you need to create a temp arraylist for that particular key
                 ArrayList<Integer> temp=new ArrayList<>();
                 temp.add(current.node.data);
                 map.put(current.hd,temp);
