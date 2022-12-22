@@ -118,7 +118,7 @@ public class Prdecessor_and_Sucessor_in_BST {
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
         FindPredAndSucess(root,3);
-        //5 3 8 2 -1 6 10 -1 -1 -1 -1 -1 -1 -1 -1
+        //5 3 8 2 4 6 10 -1 -1 -1 -1 -1 -1 -1 -1
         System.out.println(" predecessor - "+ predecessor + " successor - " + successor);
 
     }

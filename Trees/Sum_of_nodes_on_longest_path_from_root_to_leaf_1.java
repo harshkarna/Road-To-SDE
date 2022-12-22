@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Sum_of_nodes_on_longest_path_from_root_to_leaf {
+public class Sum_of_nodes_on_longest_path_from_root_to_leaf_1 {
 
 
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
@@ -83,23 +83,28 @@ public class Sum_of_nodes_on_longest_path_from_root_to_leaf {
     static int maxLength=0;
 
     public  static void solve(BinaryTreeNode<Integer> root, int length, int sum) {
-        //Now this base case
-        //here root =null means u have reached the end , now its time to
-        //store set maxsum and max length
-        //4 1 5 N 2 N N N 3
+        //check for the base case
         if(root==null){
+            return;
+        }
+        // 2nd base case
+        //now if you have reached leaf node check current status for max length and max sum and before that
+        //add leaf node value
+        if(root.left==null && root.right==null){
+            //add leaf node value to current sum
+            sum=sum+root.data;
             if(length > maxLength){
                 //if current length is greater than max length just replace both
                 maxLength=length;
                 maxSum=sum;
             }
             else if(length==maxLength){
-                //if length become equal then compare the current sum and max sum value and replae it
+                //if length become equal then compare the current sum and max sum value and replace it
                 maxSum=Math.max(maxSum,sum);
             }
             return;
         }
-        //adding root's data
+        //adding current node data
         sum=sum+root.data;
 
         solve(root.left,length+1,sum);
