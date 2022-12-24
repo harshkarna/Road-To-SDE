@@ -121,12 +121,17 @@ public class Merge_2_BST {
 
 
     public static BinaryTreeNode<Integer> mergeBST(BinaryTreeNode<Integer> root1,BinaryTreeNode<Integer> root2){
-        //step 1 : store inorder
+        //step 1 : store inorder  - o(m)
         ArrayList<Integer> bst1=new ArrayList<>();
         ArrayList<Integer> bst2=new ArrayList<>();
         store_inorder_in_list(root1,bst1);
         store_inorder_in_list(root2,bst2);
+
+
+        //step 2 - merge both arrays
         ArrayList<Integer> mergedArray=mergeArrays(bst1,bst2);
+
+        //step 3 - use merged array to built inorder
         int s=0,e=mergedArray.size()-1;
         return inorder_to_bst(s,e,mergedArray);
 
