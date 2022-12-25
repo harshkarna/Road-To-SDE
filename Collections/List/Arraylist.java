@@ -16,9 +16,6 @@ public class Arraylist {
         list.add(0,0);
 
 
-        list.add(7);
-        
-
         System.out.println(list);
 
         List<Integer> newlist = new ArrayList(); // Creating a new
