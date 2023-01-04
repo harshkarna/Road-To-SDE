@@ -1,4 +1,4 @@
-package com.Collections.List;
+package com.Collections;
 
 import com.OOPS_part1.Student;
 
