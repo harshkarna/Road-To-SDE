@@ -12,8 +12,15 @@ public class String_Basic {
         System.out.println(str.charAt(2)); //to access particular index element
 
         String str1 ="Codingiunh";
-        String str2 =" is Fun";
+        String str2 =" is Fun back ";
         String str3 ="Cmod";
+//
+//        String[] arr1=str2.split(" ");
+//        for(String i :arr1){
+//            System.out.print(i +" ");
+//        }
+
+
 
         System.out.println(str1+str2); //to concatenate
 

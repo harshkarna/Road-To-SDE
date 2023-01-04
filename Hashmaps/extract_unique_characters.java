@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class extract_unique_characters {
 
     private static String getuniquecharacters(String str) {
-        
+
         HashMap<Character,Boolean> map=new HashMap<>();
         String ans="";
 
