@@ -1,48 +1,27 @@
 package com.LeetcodeDaily;
 
+import java.util.Arrays;
+
 public class Minimum_Number_of_Arrows_to_Burst_Balloons {
 
     public  static int  findMinArrowShots(int[][] points) {
+        //if array is empty
+        if (points.length==0){
+            return 0;
+        }
+        //sort the array
+        Arrays.sort(points, (a, b) -> Integer.compare(a[1],b[1]));
+        int arrowShots=1;
 
-        // not able to solve
-
-        int arrowShots=0;
-        int rows=points.length;
-        int columns=points[0].length;
-//        for(int i=0;i<rows;i++){
-//            for(int j=0;j<columns;j++){
-//                if(points[i][0] == -1 &&  points[j+1][1] == -1  && points[i][1] == -1  && points[j+1][0]==-1 ){
-//                    return arrowShots;
-//                }
-//                if(points[i][0] < points[j+1][1] && points[i][1] > points[j+1][0]){
-//                    //then arrow will hit these two balloons
-//                    //and after hit make these disappear
-//                    arrowShots++;
-//                    points[i][0]=-1;
-//                    points[j][1]=-1;
-//                    points[i][1]=-1;
-//                    points[j][0]=-1;
-//
-//                }
-//            }
-//        }
-
-//        for(int i=0;i<rows;i++){
-//                if(points[i][0] < points[j+1][1] && points[i][1] > points[j+1][0]){
-//                    //then arrow will hit these two balloons
-//                    //and after hit make these disappear
-//                    arrowShots++;
-//                    points[i][0]=-1;
-//                    points[j][1]=-1;
-//                    points[i][1]=-1;
-//                    points[j][0]=-1;
-//
-//            }
-//        }
+        int end =points[0][1];
+        for(int i=1;i <points.length;i++){
+            if(points[i][0] > end){
+                arrowShots++;
+                end=points[i][1];
+            }
+        }
 
         return arrowShots;
-        // after loop is over , then those elements will be left with no overlap
-        //then just simply return no of remaining elements
 
     }
 

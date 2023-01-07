@@ -32,7 +32,6 @@ public class Minimum_Rounds_to_Complete_All_Tasks {
                 minimumRounds = minimumRounds + count/3 + 1 ;
 
             }
-
         }
         return minimumRounds;
 
