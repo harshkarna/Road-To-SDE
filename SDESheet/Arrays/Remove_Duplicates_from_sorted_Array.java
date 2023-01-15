@@ -21,7 +21,7 @@ in-place such that each unique element appears only once. The relative order of 
 
 */
 
-package com.SDESheet;
+package com.SDESheet.Arrays;
 
 public class Remove_Duplicates_from_sorted_Array {
 

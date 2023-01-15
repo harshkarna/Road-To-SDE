@@ -1,4 +1,4 @@
-package com.SDESheet;
+package com.SDESheet.Arrays;
 
 public class Check_if_array_is_sorted_and_rotated {
 

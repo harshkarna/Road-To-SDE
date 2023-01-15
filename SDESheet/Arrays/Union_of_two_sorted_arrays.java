@@ -10,7 +10,7 @@
 //        Output: 1 2 3 4 5
 //        Explanation: Distinct elements including
 //        both the arrays are: 1 2 3 4 5.
-package com.SDESheet;
+package com.SDESheet.Arrays;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
