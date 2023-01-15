@@ -74,7 +74,7 @@ public class Loot_Houses {
 
     private static int getMaxLootCount(int n,int[] arr) {
         int[] dp=new int[n+1];
-        for(int i=0 ;i <dp.length;i++){
+        for(int i= 0 ;i <dp.length;i++){
             dp[i]=-1;
         }
         return robFrom(arr,0,dp);
