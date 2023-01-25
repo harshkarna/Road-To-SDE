@@ -122,30 +122,30 @@ public class EditDistance {
         return myAns;
 
     }
-
-    private static int getEditDistanceIterative(String str1, String str2) {
-        //Base case
-        if(i==str1.length()){
-            return str2.length()-j;
-        }
-
-        if(j==str2.length()){
-            return str1.length()-i;
-        }
-
-        int myAns;
-        if(str1.charAt(i)==str2.charAt(j)){
-            myAns=getEditDistance(str1,str2,i+1,j+1);
-        }
-        else{
-            int ans1= 1+ getEditDistance(str1,str2, i+1,j+1); //replace
-            int ans2= 1 + getEditDistance(str1,str2,i+1,j); // delete
-            int ans3= 1 + getEditDistance(str1,str2,i,j+1);// insert
-            myAns= Math.min(ans1,Math.min(ans2,ans3));
-        }
-        return myAns;
-
-    }
+//
+//    private static int getEditDistanceIterative(String str1, String str2) {
+//        //Base case
+//        if(i==str1.length()){
+//            return str2.length()-j;
+//        }
+//
+//        if(j==str2.length()){
+//            return str1.length()-i;
+//        }
+//
+//        int myAns;
+//        if(str1.charAt(i)==str2.charAt(j)){
+//            myAns=getEditDistance(str1,str2,i+1,j+1);
+//        }
+//        else{
+//            int ans1= 1+ getEditDistance(str1,str2, i+1,j+1); //replace
+//            int ans2= 1 + getEditDistance(str1,str2,i+1,j); // delete
+//            int ans3= 1 + getEditDistance(str1,str2,i,j+1);// insert
+//            myAns= Math.min(ans1,Math.min(ans2,ans3));
+//        }
+//        return myAns;
+//
+//    }
 
 
 
