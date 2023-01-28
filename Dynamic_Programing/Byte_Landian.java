@@ -37,20 +37,25 @@ package com.Dynamic_Programing;
 
 public class Byte_Landian {
 
-    private static int getOptimalAmount(int n) {
-        if(n ==0){
-            return 0;
+    private static int getOptimalAmountIterative(int n) {
+
+        int[] dp=new int[n+1];
+
+        for(int i=0;i<=n;i++){
+            dp[i]=i;
         }
-        int breaked= (n/2) + (n/3) + (n/4);
-        int ans =getOptimalAmount(Math.max(n-1,breaked));
 
+        for(int i=0;i<=n;i++){
+            dp[i]=Math.max(dp[i],dp[i]/2+ dp[i]/3 + dp[i]/4);
+        }
 
-       return 0;
+        return dp[n];
+
     }
 
     public static void main(String[] args) {
-        int n=22;
-        System.out.println(getOptimalAmount(n));
+        int n=12;
+        System.out.println(getOptimalAmountIterative(n));
 
     }
 
