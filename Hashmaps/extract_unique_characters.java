@@ -28,7 +28,7 @@ public class extract_unique_characters {
 
         HashMap<Character,Boolean> map=new HashMap<>();
         String ans="";
-
+        //What we will do ki for every new char we found will put that in map and ans string
         for(int i=0;i <str.length();i++){
             char s=str.charAt(i);
             if(!map.containsKey(s)){
@@ -40,7 +40,7 @@ public class extract_unique_characters {
     }
 
     public static void main(String[] args) {
-        String str="abcde";
+        String str="abcdeeb";
         System.out.println(getuniquecharacters(str));
 
     }

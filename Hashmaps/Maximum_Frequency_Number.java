@@ -32,14 +32,8 @@ public class Maximum_Frequency_Number {
         //creating a hashmap of integers
         HashMap<Integer,Integer>  map=new HashMap<>();
         for(int i :arr){
-            //if key is already there , increase its count by 1
-            if(map.containsKey(i)){
-                map.put(i,map.get(i) + 1);
-            }
-            //else just simply put 1
-            else{
-                map.put(i,1);
-            }
+
+            map.put(i,map.getOrDefault(i,0)+1);
         }
 
         //now we need to iterate once more time to get whose key has max value

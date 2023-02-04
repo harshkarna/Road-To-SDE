@@ -8,12 +8,7 @@ public class Print_Intersection_of_array {
         HashMap<Integer,Integer> map=new HashMap<>();
         //create a freq array for one array
         for(int i:arr1){
-            if(map.containsKey(i)){
-                map.put(i,map.get(i) +1);
-            }
-            else{
-                map.put(i,1);
-            }
+            map.put(i,map.getOrDefault(i,0)+1);
         }
 
         //now we will iterate over the second array and check if arr2[i] is present in

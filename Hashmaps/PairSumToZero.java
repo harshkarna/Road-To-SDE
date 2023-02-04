@@ -27,36 +27,30 @@ public class PairSumToZero {
 
     private static int getcountpairsumtozero(int[] arr) {
         int finalCount=0;
+
         HashMap<Integer,Integer> map=new HashMap<>();
+        // create the  freq table
         for(int i :arr){
-            if(map.containsKey(i)){
-                map.put(i,map.get(i)+1);
-            }
-            else{
-                map.put(i,1);
-            }
+            map.put(i,map.getOrDefault(i,0)+1);
         }
 
         for(int i : arr){
-
+            int times;
             if(map.containsKey(-i) && map.get(i)!=0){
-                int times;
-                //handling zero key cases
-                if(i==(-i)){
+                //checking when key is 0
+                //just get its freq number and apply formula and then make its val 0.
+                if(i==0){
                     int occurrences = map.get(i);
                     //same elements pair formula
                     times = (occurrences * (occurrences - 1)) / 2;
                     finalCount = finalCount+times;
                     map.put(i, 0);
-                    continue;
                 }
-
                 //handling non zero key cases
                 times=map.get(i) * map.get(-i);
                 finalCount=finalCount+times;
                 map.put(i,0);
                 map.put(-i,0);
-
             }
         }
         return finalCount;
