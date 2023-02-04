@@ -80,6 +80,18 @@ public class StairCase {
 
         return x + y + z;
 
+    }
+
+    private static int getCountMemoization(int n, int dp[]){
+        if(n==1 || n==2 ){
+            return n;
+        }
+        if(n==3){
+            return 4;
+        }
+        if(dp[n]!=-1)return dp[n];
+        dp[n]=getCountMemoization(n-1,dp)+getCountMemoization(n-2,dp)+getCountMemoization(n-3,dp);
+        return dp[n];
 
     }
 

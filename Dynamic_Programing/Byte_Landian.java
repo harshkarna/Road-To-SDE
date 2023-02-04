@@ -33,8 +33,6 @@ Byte Landian
 
 package com.Dynamic_Programing;
 
-//Not done
-
 public class Byte_Landian {
 
     private static int getOptimalAmountIterative(int n) {
@@ -53,8 +51,26 @@ public class Byte_Landian {
 
     }
 
+/*
+
+    private static int getOptimalAmountMemo(int n, int dp[]) {
+
+        if(dp[n]!=-1)return dp[n];
+
+        dp[n]=Math.max(getOptimalAmountMemo(dp[n],dp),getOptimalAmountMemo(dp[n/2],dp)+ getOptimalAmountMemo(dp[n/3],dp) + getOptimalAmountMemo(dp[n/4],dp));
+        return dp[n];
+    }
+*/
+
+
     public static void main(String[] args) {
         int n=12;
+        int[] dp=new int[n+1];
+        for(int i=0 ;i <dp.length;i++){
+            dp[i]=-1;
+        }
+
+//        System.out.println(getOptimalAmountMemo(n,dp));
         System.out.println(getOptimalAmountIterative(n));
 
     }

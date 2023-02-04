@@ -66,6 +66,32 @@ public class Min_Steps_to_1 {
         return dp[n];
 
     }
+/*
+ One more iterative approach, here we can take that base cases
+
+    int minSteps(int N)
+    {
+        int dp[N+1];
+
+        dp[0]=0,dp[1]=0,dp[2]=1,dp[3]=1;
+
+        for(int i=4;i<=N;i++)
+        {
+            int a=INT_MAX,b=INT_MAX, c=INT_MAX;
+
+            if(i%3==0)
+                a=1+dp[i/3];
+            if(i%2==0)
+                b=1+dp[i/2];
+            c=1+dp[i-1];
+            dp[i] = min(a,min(b,c));
+        }
+
+        return dp[N];
+    }
+
+*/
+
 
     private static int countMinimumStepsToOne(int n,int[] dp) {
         if (n==1){
@@ -108,6 +134,25 @@ public class Min_Steps_to_1 {
 
     }
 
+    private static int countMinimumStepsToOneMemo(int n,int[] dp) {
+        if (n==1){
+            return 0;
+        }
+        if(dp[n]!=-1) return dp[n];
+        int subtractOne;
+        int divideByTwo=Integer.MAX_VALUE;
+        int divideByThree =Integer.MAX_VALUE;
+        subtractOne=countMinimumStepsToOne(n-1,dp);
+        if(n%2==0){
+            divideByTwo=countMinimumStepsToOne(n/2,dp);
+        }
+        if(n%3==0){
+            divideByThree=countMinimumStepsToOne(n/3,dp);
+        }
+
+        dp[n]= 1+Math.min(subtractOne,Math.min(divideByThree,divideByTwo));
+        return dp[n];
+    }
 
     public static void main(String[] args) {
         int n =4;
@@ -116,6 +161,7 @@ public class Min_Steps_to_1 {
             dp[i]=-1;
         }
         System.out.println(countMinimumStepsToOne(n,dp));
+        System.out.println(countMinimumStepsToOneMemo(n,dp));
 
         System.out.println(countMinimumStepsToOneIterative(n));
     }

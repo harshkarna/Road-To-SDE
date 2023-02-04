@@ -56,19 +56,21 @@ public class Loot_Houses {
 
 
 //    Recursive DP + memoization
+/*
 
-    private static int robFrom(int[] wealth, int currentIndex,int[] dp) {
-        if(currentIndex >=wealth.length){
+    private static int robFrom(int[] arr, int n,int[] dp) {
+        //base case
+        if(n >=arr.length){
             return 0;
         }
-        if(dp[currentIndex]!=-1){
-            return dp[currentIndex];
+        if(dp[n]!=-1){
+            return dp[n];
         }
-        int stealCurrent=wealth[currentIndex] +robFrom(wealth,currentIndex+2,dp);
-        int skipCurrent=robFrom(wealth,currentIndex+1,dp);
+        int stealCurrent=arr[n] +robFrom(arr,n+2,dp);
+        int skipCurrent=robFrom(arr,n+1,dp);
 
-        dp[currentIndex] =Math.max(stealCurrent,skipCurrent);
-        return  dp[currentIndex];
+        dp[n] =Math.max(stealCurrent,skipCurrent);
+        return  dp[n];
     }
 
 
@@ -80,6 +82,37 @@ public class Loot_Houses {
         return robFrom(arr,0,dp);
 
     }
+*/
+
+    ///Top Down Approach
+    private static int robFrom(int[] arr, int n,int[] dp) {
+        //base casees
+        if(n == 0){
+            return arr[0];
+        }
+        if(n==1){
+           return Math.max(arr[0],arr[1]);
+        }
+        if(dp[n]!=-1){
+            return dp[n];
+        }
+        int stealCurrent=arr[n] +robFrom(arr,n-2,dp);
+        int skipCurrent=robFrom(arr,n-1,dp);
+
+        dp[n] =Math.max(stealCurrent,skipCurrent);
+        return  dp[n];
+    }
+
+
+    private static int getMaxLootCount(int n,int[] arr) {
+        int[] dp=new int[n];
+        for(int i= 0 ;i <dp.length;i++){
+            dp[i]=-1;
+        }
+        return robFrom(arr,n-1,dp);
+
+    }
+
 
 
     //Iterative DP (Bottom up)
@@ -106,7 +139,6 @@ public class Loot_Houses {
         if (n == 1) {
             return arr[0];
         }
-
         int[] dp = new int[n];
         // Initialize the dp[0] and dp[1]
         dp[0] = arr[0];

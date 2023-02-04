@@ -1,7 +1,8 @@
 /*
 Coin Tower
 
-        Whis and Beerus are playing a new game today. They form a tower of N coins and make a move in alternate turns.
+        Whis and Beerus are playing a new game today. They form a tower of N coins and make a move in
+        alternate turns.
          Beerus plays first. In one step, the player can remove either 1, X, or Y coins from the tower.
           The person to make the last move wins the game. Can you find out who wins the game?
         Input format :
@@ -30,6 +31,7 @@ Coin Tower
 
 /*
 //Approach ;
+Game Theory question
 a will win when i :-
         1.a loses for n-1 coins OR
         2.a loses for n-x coins OR
@@ -42,6 +44,18 @@ a will win when i :-
 package com.Dynamic_Programing;
 
 public class Coin_Tower {
+/*
+Let us take few example values of n for x = 3, y = 4.
+n = 0 A can not pick any coin so he losses
+n = 1 A can pick 1 coin and win the game
+n = 2 A can pick only 1 coin. Now B will pick 1 coin and win the game
+n = 3 4 A will win the game by picking 3 or 4 coins
+n = 5, 6 A will choose 3 or 4 coins. Now B will have to choose from 2 coins so A will win.
+We can observe that A wins game for n coins only when B loses for coins n-1 or n-x or n-y.
+
+
+
+ */
 
     private static String getWinner(int n, int x, int y) {
         boolean[] dp=new boolean[n+1];

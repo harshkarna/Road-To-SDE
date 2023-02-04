@@ -32,6 +32,15 @@ Minimum Number Of Squares
         Sample Output 2 :
         1
 */
+/*
+
+Approach :
+1.We will explore all the paths
+2.Like in recursion happens , will do 1 work rest recursion will do
+3.So we will ask recursion to have all answers after taking 1 step
+4.whatever is minimum we will take it and add 1 and return it.
+
+*/
 
 package com.Dynamic_Programing;
 
@@ -55,8 +64,8 @@ public class Minimum_squares_to_represent_N {
         int myAns=1+minAns;
         return myAns;
     }
-*/
 
+*/
 
     //Recursive DP
     public static int minSquares(int n, int[] dp){
@@ -81,6 +90,24 @@ public class Minimum_squares_to_represent_N {
         }
         int myAns=1+minAns;
         return myAns;
+    }
+
+    public static int minSquaresMemo(int n, int[] dp){
+        if(n==0){
+            return 0;
+        }
+
+        int minAns=Integer.MAX_VALUE;
+        for(int i=1;i*i<=n;i++){
+            if(dp[n]!=-1) return dp[n];
+            int currAns;
+            currAns=minSquaresMemo(n-(i*i),dp);
+            if(currAns < minAns){
+                minAns=currAns;
+            }
+        }
+        dp[n]=1+minAns;
+        return dp[n];
     }
 
 
@@ -114,12 +141,13 @@ public class Minimum_squares_to_represent_N {
 
 
     public static void main(String[] args) {
-        int n =41;
+        int n =132;
         int[] dp=new int[n+1];
         for(int i=0 ;i <dp.length;i++){
             dp[i]=-1;
         }
         System.out.println(minSquares(n,dp));
+        System.out.println(minSquaresMemo(n,dp));
         System.out.println(minSquaresI(n));
 
 
