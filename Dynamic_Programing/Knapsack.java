@@ -1,7 +1,8 @@
 /*
 0 1 Knapsack - Problem
 
-        A thief robbing a store can carry a maximal weight of W into his knapsack. There are N items, and i-th item weigh 'Wi' and the value being 'Vi.' What would be the maximum value V, that the thief can steal?
+        A thief robbing a store can carry a maximal weight of W into his knapsack. There are N items, and i-th item weigh 'Wi' and the value being 'Vi.'
+         What would be the maximum value V, that the thief can steal?
         Input Format :
         The first line of the input contains an integer value N, which denotes the total number of items.
 
@@ -56,6 +57,25 @@ public class Knapsack {
         return myans;
     }
 
+    private static int getKnapsackMemo(int[] weights, int[] values, int maxWeight, int i,int[][] dp) {
+        //base case
+         if(maxWeight==0 || i==weights.length){
+            return 0;
+        }
+
+        if(dp[i][maxWeight]!=-1)return dp[i][maxWeight];
+
+        if(weights[i] <=maxWeight){
+            int ans1=values[i]+ getKnapsackMemo(weights, values, maxWeight -weights[i], i+1,dp);//include i
+            int ans2=getKnapsackMemo(weights, values, maxWeight, i+1,dp); //exclude i
+            dp[i][maxWeight]=Math.max(ans1,ans2);
+        }
+        else{
+            dp[i][maxWeight]=getKnapsackMemo(weights, values, maxWeight, i+1,dp);
+        }
+        return dp[i][maxWeight];
+    }
+
 
     private static  int knapsackIterative(int[] weights, int[] values,int maxWeight){
         int n = values.length;
@@ -76,9 +96,20 @@ public class Knapsack {
                 dp[i][w]=ans;
             }
         }
-
+        print2DArray(dp);
         return dp[0][maxWeight];
 
+    }
+    public static void print2DArray(int[][] arr){
+        //display 2D Array
+        int rows=arr.length;
+        int cols=arr[0].length;
+        for(int i=0;i<rows;i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 
 
@@ -89,8 +120,17 @@ public class Knapsack {
         int[] weights={1,2,4,5};
         int[] values={5,4,8,6};
         int maxWeight=5;
+        int[][] dp=new int[n+1][maxWeight+1];
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=maxWeight;j++){
+                dp[i][j] = -1;
+            }
+        }
+        System.out.println(getKnapsackMemo(weights,values,maxWeight,0,dp));
+        print2DArray(dp);
+        System.out.println();
 
-        System.out.println(getKnapsack(weights,values,maxWeight,0));
+//        System.out.println(getKnapsack(weights,values,maxWeight,0));
         System.out.println(knapsackIterative(weights,values,maxWeight));
 
 

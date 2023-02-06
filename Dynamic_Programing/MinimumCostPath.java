@@ -46,9 +46,6 @@ Min Cost Path Problem
 */
 
 package com.Dynamic_Programing;
-
-import com.sun.javafx.stage.StageHelper;
-
 import java.util.Scanner;
 
 public class MinimumCostPath {
@@ -81,6 +78,8 @@ public class MinimumCostPath {
 
     */
 
+
+    //Recursive way
     public static  int minCostPath(int[][] cost,int i , int j){
 
         int m=cost.length;
@@ -127,7 +126,7 @@ public class MinimumCostPath {
         // will have m-1 and n-1 as base case
         for(int i=m-1;i>=0;i--){
             for(int j=n-1;j>=0;j--){
-                /*Special Case:
+            /*    Special Case:
                  For when i is on m-1, n-1, so all directions will be blocked , hence we need to return
                   the value  accumulated at that time
                   */
@@ -145,8 +144,6 @@ public class MinimumCostPath {
             }
         }
         return dp[0][0];
-
-
     }
 
     public static  int minCostPathDPR(int[][] cost,int i , int j,int[][] dp){
@@ -169,7 +166,7 @@ public class MinimumCostPath {
 
         int ans1Right,ans2Diag,ans3Down;
         if(dp[i][j+1]== Integer.MIN_VALUE){
-            ans1Right=minCostPath(cost,i,j+1);
+            ans1Right=minCostPathDPR(cost,i,j+1,dp);
             dp[i][j+1]=ans1Right;
         }
         else{
@@ -177,7 +174,7 @@ public class MinimumCostPath {
         }
 
         if(dp[i+1][j+1]== Integer.MIN_VALUE){
-            ans2Diag=minCostPath(cost,i+1,j+1);
+            ans2Diag=minCostPathDPR(cost,i+1,j+1,dp);
             dp[i+1][j+1]=ans2Diag;
         }
         else{
@@ -185,7 +182,7 @@ public class MinimumCostPath {
         }
 
         if(dp[i+1][j]== Integer.MIN_VALUE){
-            ans3Down=minCostPath(cost,i+1,j);
+            ans3Down=minCostPathDPR(cost,i+1,j,dp);
             dp[i+1][j]=ans3Down;
         }
         else{
@@ -198,6 +195,37 @@ public class MinimumCostPath {
 
     }
 
+    public static  int minCostPathMemo(int[][] cost,int i , int j, int[][] dp){
+
+        int m=cost.length;
+        int n=cost[0].length;
+
+       /*Special Case:
+        For when i is on m-1, n-1 (last index),  so all directions will be blocked , hence we need to return
+        the value  accumulated at that time
+        */
+        if(i==m-1 && j==n-1){
+            return cost[i][j];
+        }
+
+       /* Now Base case
+        when ever the i, j either is crossing boundary of matrix , we need to set that direction infinity*/
+        if( i >=m || j>=n){
+            return Integer.MAX_VALUE;
+        }
+
+        if(dp[i][j]!=Integer.MIN_VALUE){
+          return dp[i][j];
+        }
+
+        int ans1Right=minCostPathMemo(cost,i,j+1,dp);
+        int ans2Diag=minCostPathMemo(cost,i+1,j+1,dp);
+        int ans3Down=minCostPathMemo(cost,i+1,j,dp);
+
+        dp[i][j] =cost[i][j] +Math.min(ans1Right,Math.min(ans2Diag,ans3Down));
+        return dp[i][j];
+
+    }
 
 
     public static void main(String[] args) {
@@ -211,10 +239,12 @@ public class MinimumCostPath {
             }
         }
         System.out.println(minCostPath(cost,0,0));
-        System.out.println(minCostPathDPR(cost,0,0,dp));
+//        System.out.println(minCostPathDPR(cost,0,0,dp));
         System.out.println(minCostPathIterative(cost));
+        System.out.println(minCostPathMemo(cost,0,0,dp));
 
 
 
     }
 }
+

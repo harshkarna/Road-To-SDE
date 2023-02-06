@@ -51,7 +51,7 @@ public class Max_Square_matrix_with_all_zeroes {
         for(int i=1;i <=rows;i++){
             for(int j=1;j <=columns;j++){
                 if(matrix[i-1][j-1]== 0){
-                    dp[i][j] = Math.min(Math.min(dp[i][j - 1], dp[i - 1][j]), dp[i - 1][j - 1]) + 1;
+                    dp[i][j] = Math.min( dp[i - 1][j - 1],Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
                     maxLength = Math.max(maxLength, dp[i][j]);
                 }
             }
@@ -62,6 +62,7 @@ public class Max_Square_matrix_with_all_zeroes {
 
     public static void main(String[] args) {
        int[][] matrix={{0,1,1,1,0},{1,1,1,1,0},{0,1,1,1,1},{0,1,1,1,1},{0,0,1,1,1}};
+
         System.out.println(maximalSquare(matrix));
 
     }

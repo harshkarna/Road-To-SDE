@@ -68,6 +68,33 @@ public class EditDistance {
 
     }
 
+    private static int getEditDistanceMemo(String str1, String str2, int i, int j, int[][] dp) {
+        //Base case
+        if(i==str1.length()){
+            return str2.length()-j;
+        }
+
+        if(j==str2.length()){
+            return str1.length()-i;
+        }
+
+        if(dp[i][j]!=-1){
+            return dp[i][j];
+        }
+
+        if(str1.charAt(i)==str2.charAt(j)){
+            dp[i][j]=getEditDistanceMemo(str1,str2,i+1,j+1,dp);
+        }
+        else{
+            int ans1= 1+ getEditDistanceMemo(str1,str2, i+1,j+1,dp); //replace
+            int ans2= 1 + getEditDistanceMemo(str1,str2,i+1,j,dp); // delete
+            int ans3= 1 + getEditDistanceMemo(str1,str2,i,j+1,dp);// insert
+            dp[i][j]= Math.min(ans1,Math.min(ans2,ans3));
+        }
+        return dp[i][j];
+
+    }
+
     //Not working
 
     private static int getEditDistanceDPR(String str1, String str2, int i, int j, int[][] dp) {
@@ -122,30 +149,33 @@ public class EditDistance {
         return myAns;
 
     }
-//
-//    private static int getEditDistanceIterative(String str1, String str2) {
-//        //Base case
-//        if(i==str1.length()){
-//            return str2.length()-j;
-//        }
-//
-//        if(j==str2.length()){
-//            return str1.length()-i;
-//        }
-//
-//        int myAns;
-//        if(str1.charAt(i)==str2.charAt(j)){
-//            myAns=getEditDistance(str1,str2,i+1,j+1);
-//        }
-//        else{
-//            int ans1= 1+ getEditDistance(str1,str2, i+1,j+1); //replace
-//            int ans2= 1 + getEditDistance(str1,str2,i+1,j); // delete
-//            int ans3= 1 + getEditDistance(str1,str2,i,j+1);// insert
-//            myAns= Math.min(ans1,Math.min(ans2,ans3));
-//        }
-//        return myAns;
-//
-//    }
+
+    //Not done
+    private static int getEditDistanceIterative(String str1, String str2) {
+        int m=str1.length();
+        int n=str2.length();
+
+        //first lets fill the array with infinity
+        int[][] dp=new int[m+1][n+1];
+
+        for(int i=m-1;i>=0;i--){
+            for(int j=n-1;j>=0;j--){
+                int ans;
+                if(str1.charAt(i) ==str2.charAt(j)){
+                    ans=dp[i+1][j+1];
+                }
+                else{
+                    int ans1=dp[i+1][j+1];
+                    int ans2=dp[i+1][j];
+                    int ans3=dp[i][j+1];
+                    ans=Math.min(ans1,Math.min(ans2,ans3));
+                }
+                dp[i][j]=ans;
+            }
+        }
+        return dp[0][0];
+
+    }
 
 
 
@@ -160,6 +190,8 @@ public class EditDistance {
             }
         }
         System.out.println(getEditDistanceDPR(str1,str2,0,0,dp));
+        System.out.println(getEditDistanceMemo(str1,str2,0,0,dp));
+        System.out.println(getEditDistanceIterative(str1,str2));
 
 
     }
