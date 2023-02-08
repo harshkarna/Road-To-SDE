@@ -1,7 +1,8 @@
 /*Smallest Super-Sequence
 
         Given two strings S and T with lengths M and N. Find and return the length of their shortest 'Super Sequence'.
-        The shortest 'Super Sequence' of two strings is defined as the smallest string possible that will have both the given strings as its subsequences.
+        The shortest 'Super Sequence' of two strings is defined as the smallest string possible that will have both the
+         given strings as its subsequences.
         Note :
         If the two strings do not have any common characters, then return the sum of the lengths of the two strings.
         Input Format:

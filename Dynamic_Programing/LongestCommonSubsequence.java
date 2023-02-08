@@ -36,6 +36,18 @@ package com.Dynamic_Programing;
 
 public class LongestCommonSubsequence {
 
+    public static void print2DArray(int[][] arr){
+        //display 2D Array
+        int rows=arr.length;
+        int cols=arr[0].length;
+        for(int i=0;i<rows;i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
 
     private static int getLongestCommonSubsequence(String str1, String str2, int i , int j) {
         //base case
@@ -118,6 +130,8 @@ public class LongestCommonSubsequence {
                 dp[i][j]=ans;
             }
         }
+        print2DArray(dp);
+
         return dp[0][0];
     }
 
@@ -155,7 +169,7 @@ public class LongestCommonSubsequence {
             }
         }
 //        System.out.println(getLongestCommonSubsequenceDPR(str1,str2,0,0,dp));
-        System.out.println(getLongestCommonSubsequencemMemo(str1,str2,0,0,dp));
+//        System.out.println(getLongestCommonSubsequencemMemo(str1,str2,0,0,dp));
         System.out.println(getLongestCommonSubsequenceIterative(str1,str2));
     }
 
