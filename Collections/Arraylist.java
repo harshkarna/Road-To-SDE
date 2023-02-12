@@ -8,13 +8,14 @@ public class Arraylist {
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList(); // Creating a new
+//        ArrayList<Integer> list=new ArrayList<>();
         // List which will be added to original list.
+
         list.add(1);
         list.add(2);      //.add will add element at last
 
         //to add at particular index
         list.add(0,0);
-
 
         System.out.println(list);
 

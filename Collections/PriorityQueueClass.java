@@ -8,7 +8,7 @@ public class PriorityQueueClass {
 
     public static void main(String[] args) {
 
-        Queue<Integer> pq = new PriorityQueue<>();
+        Queue<Integer> pq = new PriorityQueue<>();//min pq
         Queue<Integer> pq1 = new PriorityQueue<>(Comparator.reverseOrder());// to get max element first,
         //works like maxheap
 
