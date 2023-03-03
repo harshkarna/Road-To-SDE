@@ -6,6 +6,13 @@ import java.util.HashMap;
 public class RemoveDuplicates {
 
 
+
+    /*Approach 1 : Using set O(n)
+    Approach 2 : Hashmap
+    Approach 3 : Sorting nlogn
+    * */
+
+
     private static ArrayList<Integer> removeDuplicates(int[] arr) {
         //to store our answer
         ArrayList<Integer> output=new ArrayList<>();

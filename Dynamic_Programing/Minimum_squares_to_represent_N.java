@@ -110,7 +110,6 @@ public class Minimum_squares_to_represent_N {
         return dp[n];
     }
 
-
     //Iterative DP
     public static int minSquaresI(int n){
         int[] dp=new int[n+1];

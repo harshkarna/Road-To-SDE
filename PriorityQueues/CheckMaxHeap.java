@@ -33,9 +33,9 @@ public class CheckMaxHeap {
             if (arr[i] < arr[leftChildIndex]) {
                 return false;
             }
-//               if  right child exists and is greater than parent then return false
-                if (rightChildIndex < n && arr[i] < arr[rightChildIndex]) {
-                    return false;
+//          if  right child exists and is greater than parent then return false
+            if (rightChildIndex < n && arr[i] < arr[rightChildIndex]) {
+                return false;
                 }
             }
         return true;

@@ -36,7 +36,7 @@ public class PairSumToZero {
 
         for(int i : arr){
             int times;
-            if(map.containsKey(-i) && map.get(i)!=0){
+            if(map.containsKey(-i)){
                 //checking when key is 0
                 //just get its freq number and apply formula and then make its val 0.
                 if(i==0){
@@ -57,9 +57,9 @@ public class PairSumToZero {
     }
 
     public static void main(String[] args) {
-//        int arr[]={2,1,-2,2,3};
+        int arr1[]={2,1,-2,2,3};
 //          int arr1[]={-2,2,6,-2,2,-6,3};
-        int arr1[]={0,-2,2,0,6,-2,2,-6,0,3,0};
+//        int arr1[]={0,-2,2,0,6,-2,2,-6,0,3,0};
 //        int arr1[]={0,0,0,0};
 
         System.out.println(getcountpairsumtozero(arr1));

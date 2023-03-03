@@ -30,6 +30,10 @@ package com.PriorityQueues;
 import java.util.PriorityQueue;
 
 public class KthLargestElement {
+    /*
+    Brute force - Sort the array and return kth -1 index O(nlogn)
+    *
+    * */
 
     private static int printKthlargest(int[] arr, int k) {
         PriorityQueue<Integer> pq=new PriorityQueue<>();

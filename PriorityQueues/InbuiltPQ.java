@@ -11,7 +11,9 @@ public class InbuiltPQ {
             pq.add(arr[i]);
         }
 
-        System.out.println(pq.peek());
+        System.out.println("Top " + pq.peek());
+
+        System.out.println();
 
         while(!pq.isEmpty()){
             System.out.println(pq.peek());

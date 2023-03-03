@@ -29,18 +29,22 @@ import java.util.Scanner;
 public class PowerofN {
 
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int x=sc.nextInt();
-        int n=sc.nextInt();
-        int i=0;
-        int val=1;
+//        Scanner sc=new Scanner(System.in);
+//        int x=sc.nextInt();
+//        int n=sc.nextInt();
+//        int i=0;
+//        int val=1;
+//
+//
+//        while(i<n) {
+//            val=val*x;
+//            i++;
+//        }
+//        System.out.println(val);
 
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
 
-        while(i<n) {
-            val=val*x;
-            i++;
-        }
-        System.out.println(val);
     }
 
 

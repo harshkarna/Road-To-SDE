@@ -37,16 +37,16 @@ public class Maximum_Frequency_Number {
         }
 
         //now we need to iterate once more time to get whose key has max value
-        int max = 0, ans = Integer.MIN_VALUE;
+        int max_value = 0, max_key = Integer.MIN_VALUE;
         for (int i : arr) {
             //getting the value of each key and comparing if its max
-            if (map.get(i) > max) {
-                max = map.get(i);
-                ans = i;
+            if (map.get(i) > max_value) {
+                max_value = map.get(i);
+                max_key = i;
             }
         }
-        System.out.println(max);
-        return ans;
+        System.out.println(max_value);
+        return max_key;
     }
 
     public static void main(String[] args) {
