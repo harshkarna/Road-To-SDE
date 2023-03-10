@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 public class BubbleSort1 {
 
-///Correct code for bubble sort
+//Time complexity - O(n2)
     public static void bubblesort(int arr[]){
         for(int i=0;i<arr.length-1;i++){
             //each iteration will push max element at last
-            for(int j=0;j<arr.length-i-1;j++){ // -i bcoz of not comparing elemnets again n again and n-1 bcoz at last we want 2 elements to be compared
+            for(int j=0;j<arr.length-i-1;j++){
+             /* -i because of not comparing elemnets again n again and n-1 bcoz at last
+              we want 2 elements to be compared
+             */
                 if(arr[j]>arr[j+1]){
+                    // id consecutive elmeents are not in order , then swap
                     int temp=arr[j+1];
                     arr[j+1]=arr[j];
                     arr[j]=temp;

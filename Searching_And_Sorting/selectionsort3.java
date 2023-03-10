@@ -6,14 +6,13 @@ public class selectionsort3 {
 
 
     public static void selectionsort(int arr[]){
+        //TO(N2)
 
-        for(int i=0;i<arr.length-1;i++){
-            //insert element at ith position
-            int min= Integer.MAX_VALUE;
-            int minIndex=-1;
+        for(int i=0;i<arr.length-2;i++){
+            //lets assume the min index at i (first element of that iteration)
+            int minIndex=i;
             for (int j=i;j<arr.length;j++){
-                if(arr[j]< min){
-                    min=arr[j];///doubt
+                if(arr[j] < arr[minIndex]){
                     minIndex=j;
                 }
             }

@@ -24,10 +24,14 @@
 package com.Recursion;
 
 public class Merge_Sort_Code {
+    //Divide and Merge Concept
 
-    public static void merge(int[] arr,int startIndex, int endIndex){
-        int size=endIndex-startIndex+1;
-        int mid=(startIndex+endIndex)/2;
+
+//    Time complexity - O(nlog(n))
+
+    public static void merge(int[] arr,int startIndex,int mid, int endIndex){
+        int size=endIndex-startIndex+1; // to be noted how we are finding size
+        // temp array to store the result
         int[] output = new int [size];
         int i =startIndex;
         int j=mid+1;
@@ -46,6 +50,7 @@ public class Merge_Sort_Code {
                 k++;
             }
         }
+        //next 2 while loops becaus if one of i or j is completed its iteration
         while(i<=mid){
             output[k]=arr[i];
             i++;
@@ -57,7 +62,6 @@ public class Merge_Sort_Code {
             k++;
         }
         int m=0;
-
         //for copying back sorted temporary array to main array
         for(int n=startIndex;n<=endIndex;n++){
             arr[n]=output[m];
@@ -75,7 +79,7 @@ public class Merge_Sort_Code {
       int mid =(startIndex+endIndex)/2;
       merge_sort(arr,startIndex,mid);
       merge_sort(arr,mid+1,endIndex);
-      merge(arr,startIndex,endIndex);
+      merge(arr,startIndex,mid,endIndex);
 
     }
 
