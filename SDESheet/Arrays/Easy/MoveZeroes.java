@@ -12,7 +12,7 @@ Given an integer array nums, move all 0's to the end of it while maintaining the
 */
 
 
-package com.SDESheet.Arrays;
+package com.SDESheet.Arrays.Easy;
 
 public class MoveZeroes {
 

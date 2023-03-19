@@ -1,4 +1,4 @@
-package com.SDESheet.Arrays;
+package com.SDESheet.Arrays.Easy;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,7 +9,7 @@ public class Intersection_two_sorted_arrays {
         //creating 1 set  and 1 arraylist
         HashSet<Integer> set=new HashSet<>();
         ArrayList<Integer> list=new ArrayList<>();
-        //Removing duplicates from firts array
+        //Removing duplicates from first array
         for(int i :nums1){
             set.add(i);
         }

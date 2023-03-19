@@ -11,7 +11,7 @@ Given an array nums containing n distinct numbers in the range [0, n],
         it does not appear in num
 */
 
-package com.SDESheet.Arrays;
+package com.SDESheet.Arrays.Easy;
 
 public class FindMissingNumber {
 

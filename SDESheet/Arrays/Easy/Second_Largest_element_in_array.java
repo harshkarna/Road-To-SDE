@@ -1,4 +1,4 @@
-package com.SDESheet.Arrays;
+package com.SDESheet.Arrays.Easy;
 
 public class Second_Largest_element_in_array {
 

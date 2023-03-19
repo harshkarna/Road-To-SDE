@@ -4,14 +4,13 @@ Given an array of integers nums and an integer k, return the total number of sub
         A subarray is a contiguous non-empty sequence of elements within an array.
 
 
-
         Example 1:
 
         Input: nums = [1,1,1], k = 2
         Output: 2
 */
 
-package com.SDESheet.Arrays;
+package com.SDESheet.Arrays.Easy;
 
 import java.util.HashMap;
 
@@ -27,9 +26,9 @@ Learning from this question :
         */
 
 
- /*   --Bruteforce approach
+/*    --Bruteforce approach
 
-    public  static int subarraySum(int[] nums, int k) {
+    public  static int subarraySumv1(int[] nums, int k) {
         int sum=0;
         int count=0;
         for(int i=0;i< nums.length;i++){
@@ -43,9 +42,9 @@ Learning from this question :
 
         }
         return count;
-    }
+    }*/
 
-    */
+
 /*
     2nd approach using prefix sum and Hashmap
     what algo says :

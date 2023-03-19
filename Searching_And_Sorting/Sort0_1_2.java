@@ -43,6 +43,9 @@ package com.Searching_And_Sorting;
 public class Sort0_1_2 {
 
     //best approach
+    //Dutch National Flag Algorithm
+    //To=(N)
+    //So(1)
     
     public static void sort012(int arr[]) {
         int nz = 0;
@@ -56,6 +59,7 @@ public class Sort0_1_2 {
                 arr[nz] = temp;
                 nz++;
                 i++;
+                //will move i and nz both as we know after swapping it have to be 1 at i
 
             }
             else if (arr[i] == 2) {
@@ -63,8 +67,10 @@ public class Sort0_1_2 {
                     arr[i] = arr[nt];
                     arr[nt] = temp;
                     nt--;
+                    //remember we will not move i, as we haven't process 2nd half of the array
                 }
             else{
+                //when arr[i] is 1 , just move i++
                 i++;
             }
         }
