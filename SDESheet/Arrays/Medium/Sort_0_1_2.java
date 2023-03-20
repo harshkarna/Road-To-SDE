@@ -1,6 +1,18 @@
 package com.SDESheet.Arrays.Medium;
 
 public class Sort_0_1_2 {
+    /*
+    Approach1 : Brute force
+    Do sorting nlogn
+
+    Approach2 : Count no of 0s 1s and 2s and fill another array
+    with the counts
+    but you will use space here
+
+
+    Approach3 : Dutch National Flag Algorithm
+    Pointer based approach
+    * */
 
     //best approach
     //Dutch National Flag Algorithm
