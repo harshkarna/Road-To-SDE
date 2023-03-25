@@ -3,8 +3,6 @@ Given an integer array nums, find the
         subarray
         with the largest sum, and return its sum.
 
-
-
         Example 1:
 
         Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
@@ -32,7 +30,8 @@ public class MaximumSubArraySum {
     of ans’s subarray, end – to get the ending index of ans’s subarray.
     3. Traverse the array from starting and add the ith element to max_end_here(meh),
     now we will check that adding the ith element gives a greater value than max_so_far(msf)
-    or not, if yes then we will update our msf and also update the starting and ending index(initially starting index is zero).
+    or not, if yes then we will update our msf and also update the starting and
+    ending index(initially starting index is zero).
 */
     private static int getMaxSubarraySum(int[] arr) {
         int sum=0;
@@ -46,6 +45,9 @@ public class MaximumSubArraySum {
                 maxSum=sum;
             }
             //if anytime sum drops below zero , make sum 0 and continue
+            //here we are not dropping negative elements
+            //we are making sum 0 when a neg number is making our sum below 0
+            //as no need to take that value , it will hamper our max sum only
             if(sum< 0){
                 sum=0;
             }
@@ -81,6 +83,9 @@ public class MaximumSubArraySum {
                 endingIndex=i;
             }
             //if anytime sum drops below zero , make sum 0 and continue
+            //here we are not dropping negative elements
+            //we are making sum 0 when a neg number is making our sum below 0
+            //as no need to take that value , it will hamper our max sum only
             if(sum< 0){
                 sum=0;
             }

@@ -16,10 +16,15 @@ package com.SDESheet.Arrays.Medium;
 import java.util.HashMap;
 
 public class MajorityElement {
+   /* Brute Force
+    To(ON)
+    So(On)
+    issue is we are taking extra space here by using hashmap
+    Approach :
+    1.Create a freq array
+    2.Then iterate over map and return the key which has value over n/2
 
-    //To(ON)
-    //So(On)
-    //issue is we are taking extra space here by using hashmap
+    */
     private static int majorityElement_byHashing(int[] arr) {
         int n_by_2=arr.length/2;
         HashMap<Integer,Integer> map=new HashMap<>();
@@ -37,7 +42,10 @@ public class MajorityElement {
 
     //Best Approach
    /*
+    Moore Voting Algorithm
     Approach :
+    To(ON)
+    So(1)
     Approach:
     1.Initialize 2 variables:
         Count –  for tracking the count of element
@@ -55,13 +63,16 @@ public class MajorityElement {
        int element=0;
 
        for(int i=0;i< arr.length;i++){
+           //store the current i , when count 0
            if(count==0){
                element=arr[i];
                count=1;
            }
+           //increase count value if found
            else if(arr[i]==element){
                count++;
            }
+           //otherwise decrease count
            else{
                count--;
            }
@@ -79,7 +90,6 @@ public class MajorityElement {
         return -1;
 
     }
-
 
     public static void main(String[] args) {
 
