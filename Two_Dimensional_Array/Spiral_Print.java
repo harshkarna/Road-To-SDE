@@ -57,6 +57,10 @@ package com.Two_Dimensional_Array;
 
 public class Spiral_Print {
 
+    /*Approach :
+    *
+    * */
+
     public static void spiral_Print(int[][] arr){
 
         int[] arr1 = new int[arr.length*arr[0].length];
@@ -71,7 +75,7 @@ public class Spiral_Print {
 
         while(count < total){
             //printing starting row
-            for(int index= startingRow;count < total &&index<=endingCol;index++){
+            for(int index= startingRow;count < total && index<=endingCol;index++){
                 arr1[k]=arr[startingRow][index];
                 k++;
                 count++;
@@ -79,7 +83,7 @@ public class Spiral_Print {
             startingRow++;
 
             //printing ending col
-            for(int index= startingRow;count < total &&index<=endingRow;index++){
+            for(int index= startingRow;count < total && index<=endingRow;index++){
                 arr1[k]=arr[index][endingCol];
                 k++;
                 count++;
@@ -106,6 +110,44 @@ public class Spiral_Print {
         //display of array
         for(int i=0;i < arr1.length; i++){
             System.out.print(arr1[i]+" ");
+        }
+    }
+
+
+    // approach if you dont want to take variable count
+
+    public static void spiralPrint(int[][] arr) {
+        int rowStart = 0, rowEnd = arr.length - 1;
+        int columnStart = 0, columnEnd = arr[0].length - 1;
+
+        while (rowStart <= rowEnd && columnStart <= columnEnd) {
+            // Print top row
+            for (int j = columnStart; j <= columnEnd; j++) {
+                System.out.print(arr[rowStart][j] + " ");
+            }
+            rowStart++;
+
+            // Print right column
+            for (int i = rowStart; i <= rowEnd; i++) {
+                System.out.print(arr[i][columnEnd] + " ");
+            }
+            columnEnd--;
+
+            // Print bottom row
+            if (rowStart <= rowEnd) {
+                for (int j = columnEnd; j >= columnStart; j--) {
+                    System.out.print(arr[rowEnd][j] + " ");
+                }
+                rowEnd--;
+            }
+
+            // Print left column
+            if (columnStart <= columnEnd) {
+                for (int i = rowEnd; i >= rowStart; i--) {
+                    System.out.print(arr[i][columnStart] + " ");
+                }
+                columnStart++;
+            }
         }
     }
 

@@ -13,9 +13,7 @@ public class Largest_Column_Sum {
             for (int i = 0; i < arr.length; i++) {
                 sum=sum+arr[i][j];
             }
-            if(sum>max){
-                max=sum;
-            }
+            max=Math.max(sum,max);
         }
         System.out.println(max);
     }

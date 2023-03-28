@@ -52,6 +52,7 @@ import java.util.Scanner;
 
 public class Print_Like_A_Wave {
 
+
     public static void print_wave(int[][] arr){
         boolean down=true;
         int arr1[] =new int[arr.length*arr[0].length];

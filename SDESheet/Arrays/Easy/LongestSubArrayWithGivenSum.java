@@ -30,6 +30,7 @@ public class LongestSubArrayWithGivenSum {
             if(map.containsKey(sum-k)){
                 length=Math.max(length,i-map.get(sum-k));
             }
+            //edge case --
             //handling zero and negative integers
             //whenever we are getting same sum we are not updating that in map
             if(!map.containsKey(sum)){
@@ -75,8 +76,8 @@ public class LongestSubArrayWithGivenSum {
      int[] arr1={1,2,1,3};
      int k=15;
      int k1=2;
-     System.out.println(LongestSubArrayWithGivenSum_PrefixSum(arr1,k1));
-     System.out.println(LongestSubArrayWithGivenSum_SlidingWindow(arr1,k1));
+     System.out.println(LongestSubArrayWithGivenSum_PrefixSum(arr,k));
+//     System.out.println(LongestSubArrayWithGivenSum_SlidingWindow(arr1,k1));
 
 
 
