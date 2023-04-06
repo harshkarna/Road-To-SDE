@@ -30,13 +30,20 @@ public class LeadersInAnArray {
         * */
 
     /*Approach 2 :
-
+      1.So lest start from end , because we know rightmost is always a leader
+      2. So can we assume if we atke any i , and the max of its all right most elemnt
+      and if that i is greater than that max, then i is leader , as if i > maxofright
+      then automatically i is greater than all right elements.
+      3.So lets start from keeping max as last element as i as n-2 , keep checking if
+      i > max , then print the i as leader and also replace max as current i as current i will be
+      the new leader.
      * */
 
     private static void getLeadersInAnArray(int[] arr) {
             int n =arr.length;
             //Choosing the right most element as the maximum
             int max = arr[n - 1];
+
             System.out.print(arr[n - 1] + " ");
             for (int i = n - 2; i >= 0; i--)
                 if (arr[i] > max) {

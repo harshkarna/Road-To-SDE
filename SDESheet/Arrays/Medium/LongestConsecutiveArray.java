@@ -41,7 +41,7 @@ public class LongestConsecutiveArray {
            //if its a consecutive value ,means just next
            if(arr[i]==previous + 1 ){
                currentCount++;
-           }
+           } 
            //this is to check if current value altogether different sequence
            //if yes then just make count to 1 again
            else if (arr[i] != previous){
@@ -65,7 +65,6 @@ public class LongestConsecutiveArray {
     * searching for the numbers y = x+1, x+2, x+3, ….. And stop at the first ‘y’ which
     * is not present in the HashSet. Using this we can calculate the length of the
     * longest consecutive subsequence.*/
-
 
 
     /*

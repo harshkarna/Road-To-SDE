@@ -26,7 +26,7 @@ public class NextPermuation {
     /*Approach 1 : Brute Force
     1.Generate all the possible permutations of array  and store in sorted order
     2. Do a linear search to find that value
-    3.After fining return its next value .
+    3.After finding return its next value .
     * */
 
     /*
@@ -45,7 +45,7 @@ public class NextPermuation {
 
     private static void getNextPermuation(int[] arr) {
         int n = arr.length, i, j;
-        // Find for the pivot element.
+        // Find for the pivot element./ break point
         // A pivot is the first element from
         // end of sequence which doesn't follow
         // property of non-increasing suffix
@@ -63,7 +63,7 @@ public class NextPermuation {
 
         // if pivot is found
         else {
-            // Find for the successor of pivot in suffix
+            // Find for the successor (means just next of pivot) of pivot in suffix
             for (j = n - 1; j > i; j--) {
                 if (arr[j] > arr[i]) {
                     break;

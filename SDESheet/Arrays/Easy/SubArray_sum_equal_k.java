@@ -86,8 +86,9 @@ Learning from this question :
 
 
     public static void main(String[] args) {
-       int[] nums = {4,5,1,3,2,3,4};
-       int  k = 9;
+//       int[] nums = {4,5,1,3,2,3,4};
+       int[] nums = {3,-3,1,1,1};
+        int  k = 3;
         System.out.println(subarraySum(nums,k));
     }
 }

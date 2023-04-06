@@ -1,4 +1,4 @@
-package com.Graphs;
+package com.Graphs.Striver;
 
 import java.util.Scanner;
 
