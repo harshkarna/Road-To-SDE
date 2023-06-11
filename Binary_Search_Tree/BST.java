@@ -1,7 +1,6 @@
 package com.Binary_Search_Tree;
 
 import com.Trees.BinaryTreeNode;
-import com.sun.java.swing.plaf.windows.WindowsTextAreaUI;
 
 public class BST {
      private BinaryTreeNode<Integer> root;

@@ -20,7 +20,6 @@ You are also given an interval newInterval = [start, end] that represents the st
         */
 package com.LeetcodeDaily;
 
-import sun.print.CUPSPrinter;
 
 import java.sql.Array;
 import java.util.ArrayList;

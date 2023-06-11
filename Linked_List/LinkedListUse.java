@@ -1,6 +1,5 @@
 package com.Linked_List;
 
-import sun.awt.image.ImageWatched;
 
 import java.util.LinkedList;
 import java.util.Scanner;

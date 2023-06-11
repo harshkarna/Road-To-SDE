@@ -1,6 +1,5 @@
 package com.Strings;
 
-import sun.lwawt.macosx.CSystemTray;
 
 public class StringBuilder_Basics {
 
