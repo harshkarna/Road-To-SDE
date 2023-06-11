@@ -10,5 +10,6 @@ public class Detect_Capital {
         String str="USA";
         System.out.println(detectCapitalUse(str));
 
+
     }
 }
