@@ -1,6 +1,7 @@
 package com.First_Steps;
 
 public class CheckPrime {
+    //to find out the primes
 
     public static boolean checkprime(int n ){
 
