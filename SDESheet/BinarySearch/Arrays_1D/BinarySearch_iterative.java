@@ -2,7 +2,7 @@ package com.SDESheet.BinarySearch.Arrays_1D;
 
 public class BinarySearch_iterative {
 
-    //to(log base 2 N)
+    //TO (log base 2 N)
     public static int search(int []nums, int target) {
         int n =nums.length;
         int low=0;
@@ -18,7 +18,6 @@ public class BinarySearch_iterative {
         return -1;
 
     }
-
 
     public static void main(String[] args) {
 

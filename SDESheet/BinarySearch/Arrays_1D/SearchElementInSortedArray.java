@@ -1,4 +1,5 @@
-/*Given a sorted and rotated array A of N distinct elements which is rotated at some point, and given an element key. The task is to find the index of the given element key in the array A. The whole array A is given as the range to search.
+/*Given a sorted and rotated array A of N distinct elements which is rotated at some point, and given an element key.
+The task is to find the index of the given element key in the array A. The whole array A is given as the range to search.
 
         Example 1:
 
@@ -15,6 +16,7 @@ package com.SDESheet.BinarySearch.Arrays_1D;
 
 public class SearchElementInSortedArray {
 
+
     static int search(int arr[], int target) {
 
         int low = 0, high = arr.length - 1;
@@ -24,6 +26,7 @@ public class SearchElementInSortedArray {
             if (arr[mid] == target)
                 return mid;
 
+            //we need to eliminate one half
             // first check which side is sorted and will perform our check only on that side
 
             // if left is sorted

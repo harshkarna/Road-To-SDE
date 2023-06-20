@@ -15,11 +15,10 @@ The array is right rotated K times. Find the value of K.
 package com.SDESheet.BinarySearch.Arrays_1D;
 
 public class HowManyTimesArrayRotated {
-    static int findKRotation(int arr[]) {
 
-        //here we are using the same logic to find min  and therefor index will be the answer
+    static int findKRotation_try(int arr[]) {
 
-        int low = 0, high = arr.length - 1, ans= Integer.MAX_VALUE, index =-1;
+        int low = 0, high = arr.length - 1, ans= Integer.MAX_VALUE, index=-1;
 
         while (low <= high) {
 
@@ -30,10 +29,18 @@ public class HowManyTimesArrayRotated {
             if (arr[low] <= arr[high]) {
                 if(arr[low] < ans){
                     index=low;
-                    ans=arr[low];
+                    break;
                 }
-                break;
+
             }
+
+  /*        now will  check which side is sorted and will perform our check only on that side
+            here check will be whichever side is sorted will pick its lowest element
+            in left side it will be lowest in that space  , and  on right side it will be mid
+            and then check whether that low against ans;*/
+
+
+            //we are using sorted property
 
             // if left is sorted
             if (arr[low] <= arr[mid]) {
@@ -41,15 +48,15 @@ public class HowManyTimesArrayRotated {
                 //and move searching space to right hand side
                 if(arr[low] < ans){
                     index=low;
-                    ans=arr[low];
+                    ans=Integer.min(ans,arr[low]);
                 }
                 low=mid+1;
             } else
             // if right is sorted
             {
                 if(arr[mid] < ans){
-                    index=low;
-                    ans=arr[mid];
+                    index=mid;
+                    ans=Integer.min(ans,arr[mid]);
                 }
                 high=mid-1;
             }
@@ -59,8 +66,9 @@ public class HowManyTimesArrayRotated {
     }
 
     public static void main(String[] args) {
-        int arr[]={ 1, 2, 3, 4, 5};
-        System.out.println(findKRotation(arr));
+//        int arr[]={ 5,1,2,3,4};
+        int arr[]={66,67,7, 10 ,14 ,19,21};
+        System.out.println(findKRotation_try(arr));
 
 
     }

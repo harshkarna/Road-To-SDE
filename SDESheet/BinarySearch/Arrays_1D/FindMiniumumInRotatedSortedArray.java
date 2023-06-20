@@ -26,8 +26,10 @@ public class FindMiniumumInRotatedSortedArray {
 
   /*        now will  check which side is sorted and will perform our check only on that side
             here check will be whichever side is sorted will pick its lowest element
-            in left side it will be low , and right side it will be mid
+            in left side it will be lowest in that space  , and  on right side it will be mid
             and then check whether that low against ans;*/
+
+            //we are using sorted property
 
             // if left is sorted
             if (arr[low] <= arr[mid]) {

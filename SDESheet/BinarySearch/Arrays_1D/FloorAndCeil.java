@@ -2,13 +2,9 @@ package com.SDESheet.BinarySearch.Arrays_1D;
 
 public class FloorAndCeil {
 
-    //floor in sorted Array - > largest number in array < = x (this is nothing but reverse of  lower bound algo)
-    //cei in sorted array - > smallest number in array > = x (this is nothing but lower bound algo)
+    // floor in sorted Array - > largest number in array < = x (this is nothing but reverse of  lower bound algo)
+    // ceil  (in sorted array - > smallest number in array > = xthis is nothing but lower bound algo)
 
-//    Pair getFloorAndCeil(int[] arr, int n, int x) {
-//
-//
-//    }
 
     public static int floor(int[] arr,int n,int x)
     {

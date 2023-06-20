@@ -136,16 +136,17 @@ public class PathWithMinimumEffort {
                     // we update as we need the min effort.
                     if (newEffort < dist[newr][newc]) {
                         dist[newr][newc] = newEffort;
-                        if(newr == n - 1 && newc == m - 1){
-                            dest_min =Math.min(dest_min, dist[newr][newc]);
-                        }
+//                        if(newr == n - 1 && newc == m - 1){
+//                            dest_min =Math.min(dest_min, dist[newr][newc]);
+//                        }
                         pq.add(new tuple(newEffort, newr, newc));
                     }
                 }
             }
         }
-        if(dest_min!=Integer.MAX_VALUE){
-            return dest_min;
+
+        if(dist[n-1][m-1]!=(int)(1e9)){
+            return dist[n-1][m-1];
         }
         // If the destination is unreachable.
         return 0;
@@ -153,11 +154,11 @@ public class PathWithMinimumEffort {
 
 
     public static void main(String[] args) {
-//        int[][] heights={{1,2,2},{3,8,2},{5,3,5}};
-        int[][] heights={{1,10,6,7,9,10,4,9}};
+        int[][] heights={{1,2,2},{3,8,2},{5,3,5}};
+//        int[][] heights={{1,10,6,7,9,10,4,9}};
 
-        System.out.println(MinimumEffort(heights));
         System.out.println(MinimumEffort_v1(heights));
+//        System.out.println(MinimumEffort_v1(heights));
 
 
 

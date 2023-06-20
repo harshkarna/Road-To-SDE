@@ -3,6 +3,8 @@ package com.SDESheet.BinarySearch.Arrays_1D;
 public class LowerBound {
 
    //  what is lower bound - > smallest index such that arr[index] > = x where x is the target
+    // suppose if array is  3,5,8,15,19 and x is 8 , thn LB =8
+
 
     //TO(log base2 N) same as binary search
 

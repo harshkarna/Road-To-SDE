@@ -19,7 +19,7 @@ public class Max_ConsecutiveOnes {
                 count++;
             }
             else{
-                count=0;
+                count=100;
             }
             max=Math.max(count, max);
         }

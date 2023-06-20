@@ -27,7 +27,7 @@ distance between each node and Source vertex S.
 
         Input:
         V = 3, E = 3
-        adj = {{{1, 1}, {2, 6}}, {{2, 3}, {0, 1}}, {{1, 3}, {0, 6}}}
+        adj = { {{1, 1}, {2, 6}}, {{2, 3}, {0, 1}}, {{1, 3}, {0, 6}}}
         S = 2
         Output:
         4 3 0
@@ -44,44 +44,43 @@ package com.Graphs.Striver.ShortestPathAlgos;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-public class  DijkstrasAlgoPQ {
+public class DijkstrasAlgoPQ {
 
-    public static class Pair{
+    public static class Pair {
         int node;
         int distance;
-        public Pair(int distance,int node){
+
+        public Pair(int distance, int node) {
             this.distance = distance;
             this.node = node;
 
         }
     }
 
-    public static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
-    {
+    public static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
         //create min heap which holds pair of distance and node
-        PriorityQueue<Pair> pq=new PriorityQueue<Pair>((x,y) -> x.distance - y.distance);
+        PriorityQueue<Pair> pq = new PriorityQueue<Pair>((x, y) -> x.distance - y.distance);
 
         //now create the distance array and fill with infinite value
-        int dist[]=new int[V];
-        for(int i =0; i< V; i++) dist[i]=(int) 1e9;
+        int dist[] = new int[V];
+        for (int i = 0; i < V; i++) dist[i] = (int) 1e9;
 
         //now set the initial config
         //set source as 0 in dist array and push it i n queue
-        dist[S]=0;
-        pq.add(new Pair(0,S));
+        dist[S] = 0;
+        pq.add(new Pair(0, S));
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             int distanceNode = pq.peek().distance;
-            int node=pq.peek().node;
+            int node = pq.peek().node;
             pq.poll();
 
-
-            for(int i =0; i < adj.get(node).size(); i++){
-                int edgeWeight=adj.get(node).get(i).get(1);
-                int adjNode=adj.get(node).get(i).get(0);
-                if(distanceNode +  edgeWeight < dist[adjNode]){
-                    dist[adjNode]=distanceNode +  edgeWeight;
-                    pq.add(new Pair(dist[adjNode],adjNode));
+            for (ArrayList<Integer> al : adj.get(node)) {
+                int edgeWeight = al.get(1);
+                int adjNode = al.get(0);
+                if (distanceNode + edgeWeight < dist[adjNode]) {
+                    dist[adjNode] = distanceNode + edgeWeight;
+                    pq.add(new Pair(dist[adjNode], adjNode));
                 }
 
             }

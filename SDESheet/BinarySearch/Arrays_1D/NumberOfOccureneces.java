@@ -49,7 +49,6 @@ public class NumberOfOccureneces {
         int lb =lowerBound(arr, n, k);
         if(lb==n || arr[lb] !=k) return new int[] {-1, -1};
         return new int[] {lb, upperBound(arr, n, k) -1};
-
     }
 
     public static int count(int arr[], int n, int x) {

@@ -29,8 +29,10 @@ public class SingleElementInSortedArray {
         //for single element
         if(n==1) return arr[0];
 
-        //as we rae performing binary search from 2nd element to 2nd last element
+        //as we are  performing binary search from 2nd element to 2nd last element
         //in order to avoid out of bound issues
+
+        //if first and last are single element , lets check for those
         if(arr[0]!=arr[1]) return arr[0];
         if(arr[n-1]!=arr[n-2]) return arr[n-1];
 

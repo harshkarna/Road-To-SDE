@@ -80,6 +80,7 @@ public class ShortestDistanceInBinaryMaze {
                     int newr = r + dr[i];
                     int newc = c + dc[i];
 
+
                     // Checking the validity of the cell and updating if dist is shorter.
                     if(newr >= 0 && newr < n && newc >= 0 && newc < m
                             && grid[newr][newc] == 1 && dis + 1 < dist[newr][newc]) {
