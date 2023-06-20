@@ -19,6 +19,7 @@ public class BellmanFordAlgo {
                 }
             }
         }
+
         // Nth relaxation to check negative cycle
         for (ArrayList<Integer> it : edges) {
             int u = it.get(0);
