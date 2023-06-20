@@ -49,9 +49,15 @@ public class  DijkstrasAlgoPQ {
     public static class Pair{
         int node;
         int distance;
+<<<<<<< HEAD
         public Pair(int distance,int node){
             this.distance = distance;
             this.node = node;
+=======
+        public Pair(int node,int distance){
+            this.node = node;
+            this.distance = distance;
+>>>>>>> origin/main
         }
     }
 
@@ -62,7 +68,11 @@ public class  DijkstrasAlgoPQ {
 
         //now create the distance array and fill with infinite value
         int dist[]=new int[V];
+<<<<<<< HEAD
         for(int i = 0; i< V; i++) dist[i]=(int) 1e9;
+=======
+        for(int i =0; i< V; i++) dist[i]=(int) 1e9;
+>>>>>>> origin/main
 
         //now set the initial config
         //set source as 0 in dist array and push it i n queue
@@ -70,11 +80,18 @@ public class  DijkstrasAlgoPQ {
         pq.add(new Pair(0,S));
 
         while(!pq.isEmpty()){
+<<<<<<< HEAD
             int distanceNode = pq.peek().distance; // dist of current Node
             int node=pq.peek().node;
             pq.poll();
 
 
+=======
+            int distanceNode = pq.peek().distance;
+            int node=pq.peek().node;
+            pq.poll();
+
+>>>>>>> origin/main
             for(int i =0; i < adj.get(node).size(); i++){
                 int edgeWeight=adj.get(node).get(i).get(1);
                 int adjNode=adj.get(node).get(i).get(0);
