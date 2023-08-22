@@ -8,6 +8,7 @@ public class AdjMatriixToList {
 
     public static void adjMatrixToList(int[][] adjMatrix){
         int n = adjMatrix.length;
+
         ArrayList<ArrayList<Integer>> adjL=new ArrayList<>();
         for(int i =0; i < n;i++){
             //here we are giving  edges between vertices and then filling 2d array both way
