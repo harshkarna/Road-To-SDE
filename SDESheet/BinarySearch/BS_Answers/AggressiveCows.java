@@ -4,9 +4,14 @@ import java.util.Arrays;
 
 public class AggressiveCows {
 
+
+    /*Pattern to be noted when you are asked find min of max or max of min
+    *
+    * */
+
     private static boolean canWePlace(int[] stalls, int distance, int cows) {
       int cntCows=1,lastStall=stalls[0];
-      for(int i=0; i < stalls.length;i++){
+      for(int i=1; i < stalls.length;i++){
           if(stalls[i]-lastStall >= distance){
               cntCows++;
               lastStall=stalls[i];

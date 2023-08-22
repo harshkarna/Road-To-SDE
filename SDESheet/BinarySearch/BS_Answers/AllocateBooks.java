@@ -1,24 +1,6 @@
 package com.SDESheet.BinarySearch.BS_Answers;
 public class AllocateBooks {
 
-
-    private static int getMax(int[] nums) {
-        int maxi=Integer.MIN_VALUE;
-        int n =nums.length;
-        for(int i : nums){
-            maxi=Math.max(maxi,i);
-        }
-        return maxi;
-    }
-
-    private static int sumAll(int[] nums) {
-        int sum=0;
-        int n =nums.length;
-        for(int i : nums){
-            sum += i;
-        }
-        return sum;
-    }
     private static int countStudent(int[] arr, int pages) {
         int student=1;
         int pageStudent=0;
@@ -38,7 +20,15 @@ public class AllocateBooks {
     public static int findPages(int[]A,int N,int M)
     {
         if(M>N) return -1;
-        int low =getMax(A),high=sumAll(A),ans=N;
+        int ans=N;
+
+        int low =A[0],high=0;
+
+        //find maximum and summation:
+        for (int i = 0; i < A.length; i++) {
+            low = Math.max(low, A[i]);
+            high += A[i];
+        }
         while(low<=high){
             int mid=(low+high)/2;
             int student=countStudent(A,mid);
@@ -56,7 +46,6 @@ public class AllocateBooks {
 
 
     public static void main(String[] args) {
-
 
     }
 }
