@@ -14,6 +14,24 @@ import java.util.Arrays;
 
 public class FrogJump {
 
+    public static int minEnergyRecursionV1(int[] heights,int index ) {
+        // Base cases
+        if (index == 0) {
+           return 0;
+        }
+        if (index == 1) {
+            return Math.abs(heights[1] - heights[0]);  // Energy consumed to reach the second stair.
+        }
+
+        // Calculate energy for taking one step and two steps.
+        int oneStepEnergy = Math.abs(heights[index] - heights[index - 1]) + minEnergyRecursionV1( heights,index - 1);
+        int twoStepEnergy = Math.abs(heights[index] - heights[index - 2]) + minEnergyRecursionV1( heights,index - 2);
+
+        // Return the minimum energy between one step and two steps.
+        return Math.min(oneStepEnergy, twoStepEnergy);
+    }
+
+
 
     public static int frogJumpRecur(int index, int heights[]) {
        //base case
@@ -82,6 +100,25 @@ public class FrogJump {
 
     }
 
+    public static int minEnergyTabV1(int[] heights,int index ) {
+        // Base cases
+        int[] dp = new int[index+1];
+
+        // Base cases
+        dp[0] = 0;  // No energy consumed to reach the first stair.
+        dp[1] = Math.abs(heights[1] - heights[0]);  // Energy consumed to reach the second stair.
+//        dp[2] = Math.abs(heights[2] - heights[0]);
+
+        for (int i = 3; i <=index; i++) {
+            int oneJump = Math.abs(heights[i] - heights[i - 1]) + dp[i - 1];
+            int twoJump = Math.abs(heights[i] - heights[i - 2]) + dp[i - 2];
+            dp[i] = Math.min(oneJump, twoJump);
+        }
+
+        // Return the minimum energy to reach the last stair.
+        return dp[index];
+    }
+
 
     public static int frogJumpSpacOptimise(int n, int heights[]) {
         //base case
@@ -105,7 +142,9 @@ public class FrogJump {
 
 
     public static void main(String[] args) {
-
+        int[] arr={10};
+//        System.out.println(minEnergyRecursionV1(arr, arr.length-1));
+        System.out.println(minEnergyTabV1(arr, arr.length-1));
 
     }
 }

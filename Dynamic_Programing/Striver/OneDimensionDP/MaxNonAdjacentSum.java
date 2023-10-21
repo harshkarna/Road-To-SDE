@@ -82,7 +82,7 @@ public class MaxNonAdjacentSum {
     public static void main(String[] args) {
 
         int[] nums= {1,2,3,1};
-        System.out.println(solve2(4,nums));
+        System.out.println(solve1(4,nums));
 
 
     }
