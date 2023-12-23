@@ -17,6 +17,7 @@ public class Add_2_numbers_in_LL {
                 //Make this node as head and tail node
                 head=currentNode;
                 tail=currentNode;
+                
             }
             else{
                 tail.next=currentNode;
